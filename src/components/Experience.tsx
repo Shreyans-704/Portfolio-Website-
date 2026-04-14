@@ -14,7 +14,7 @@ export default function Experience() {
       highlight: "AI-Powered Products",
       description: "Joining the engineering team to build scalable and responsive AI-integrated solutions for enterprise clients.",
       bullets: [
-        "Upcoming internship focused on modern full-stack development and Gen-AI integrations."
+        "Upcoming internship focused on modern DevOps tools with GenAI integrations"
       ],
       tech: ["React", "Next.js", "AI/LLMs", "Salesforce CLI", "GCP", "AWS"]
     },
