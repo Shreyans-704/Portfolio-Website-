@@ -50,17 +50,18 @@ export default function About() {
           </div>
 
           {/* Right Image Side */}
-          <div className="lg:w-1/2 basis-1/2 relative w-full aspect-[4/3] sm:aspect-[4/3] lg:aspect-square flex justify-center items-center">
+          <div className="lg:w-1/2 basis-1/2 relative w-full max-w-[320px] md:max-w-[400px] lg:max-w-none mx-auto aspect-square flex justify-center items-center order-first lg:order-last">
             {/* Soft backdrop glow to match image */}
             <div className="absolute inset-0 bg-blue-500/10 blur-[100px] rounded-full" />
             
-            <motion.div style={{ y: imgY }} className="relative w-full h-full max-h-[600px] rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(59,130,246,0.12)] bg-[#0a0a0c]">
+            <motion.div style={{ y: imgY }} className="relative w-full h-full rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(59,130,246,0.12)] bg-[#0a0a0c]">
               <Image 
                 src="/profile.png" 
                 alt="Shreyans Jaiswal" 
                 fill 
                 className="object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                priority
               />
               {/* Subtle gradient overlay at the bottom */}
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0a0a0c]/60 to-transparent" />

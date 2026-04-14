@@ -11,9 +11,9 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="bg-[#0f0f11] min-h-screen font-sans selection:bg-blue-500/30 selection:text-white flex">
+    <main className="bg-[#0f0f11] min-h-screen font-sans selection:bg-blue-500/30 selection:text-white relative overflow-x-hidden">
       <Sidebar />
-      <div className="flex-1 lg:ml-64 relative min-w-0 flex flex-col overflow-x-hidden">
+      <div className="w-full relative flex flex-col">
         <div id="home"><Hero /></div>
         <SystemSimulator />
         <div id="about"><About /></div>
