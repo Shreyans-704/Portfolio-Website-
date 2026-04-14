@@ -1,0 +1,5 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="hsl(249.2, 50%, 10%)" />
+    
+    <circle cx="1574.3999999999999" cy="540" r="100" fill="rgba(255,100,50,0.5)" filter="blur(20px)" />
+  </svg>
