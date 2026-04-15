@@ -1,41 +1,55 @@
-# Portfolio-Website-
-A premium, Awwwards-inspired personal portfolio built with Next.js, TypeScript, and Framer Motion.   Features a clean, minimal UI with smooth interactions, responsive design, and an interactive system simulation to showcase real-world engineering concepts beyond static projects.
+## PORTFOLIO WEBISTE : -
+🚀 Shreyans Portfolio Website
 
+A modern, production-grade developer portfolio showcasing real-world projects in Full-Stack, DevOps, and AI systems.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🔗 Live Website: https://portfolio-website-chi-five-48.vercel.app/
 
-## Getting Started
+🧠 About
 
-First, run the development server:
+This portfolio is designed to reflect real engineering thinking, not just UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+It highlights:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Scalable full-stack applications
+AI-powered systems
+Real-world problem solving
+Production-ready architecture
+⚡ Tech Stack
+Frontend: Next.js 14, React, TypeScript
+Styling: Tailwind CSS
+Animations: Framer Motion
+Icons: Lucide + React Icons
+Deployment: Vercel
+📂 Featured Projects
+🔹 Live-CODE-X
+Real-time collaborative code editor
+Sub-50ms sync latency
+Built using MERN + WebSockets + Docker
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+👉 Live: https://live-code-x.netlify.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔹 Narrately AI
+AI storytelling assistant using LLM pipelines
+Converts raw thoughts into structured narratives
 
-## Learn More
+👉 Live: https://www.narrately.in/
 
-To learn more about Next.js, take a look at the following resources:
+🔹 DocuMind
+RAG-based document Q&A system
+Semantic search over large PDFs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👉 Live: https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🔹 AI Wellness
+Sentiment-aware chatbot for mental health tracking
+Continuous conversational analytics
 
-## Deploy on Vercel
+👉 Live: https://wellnessaiweb.netlify.app/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> 9405ccb (Initial commit from Create Next App)
+🎯 Key Features
+⚡ Smooth animations with Framer Motion
+🎨 Clean dark UI with modern design
+🔗 GitHub + Live project links
+📱 Fully responsive
+🚀 Optimized for performance
