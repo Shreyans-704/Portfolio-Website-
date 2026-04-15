@@ -128,7 +128,7 @@ export default function Projects() {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    {/* GitHub Icon Button */}
+                    {/* Github Icon Button */}
                     <a
                       href={p.githubUrl}
                       target="_blank"
@@ -137,7 +137,7 @@ export default function Projects() {
                       className="p-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/10 hover:scale-110 active:scale-95 transition-all duration-300 opacity-0 group-hover:opacity-100"
                       title="View Source Code"
                     >
-                      <GitHub className="w-5 h-5" />
+                      <Github className="w-5 h-5" />
                     </a>
                     <span className="text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       View Project
@@ -189,7 +189,7 @@ export default function Projects() {
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 transition-all font-medium text-sm"
                           >
-                            <GitHub className="w-4 h-4" />
+                            <Github className="w-4 h-4" />
                             Source Code
                           </a>
                           <a
