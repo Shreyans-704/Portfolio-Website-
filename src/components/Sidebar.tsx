@@ -33,10 +33,13 @@ const LeetCodeIcon = (props: any) => (
 
 const navItems = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About Me" },
-  { id: "projects", label: "Projects" },
-  { id: "skills", label: "Core Expertise" },
+  { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "github", label: "GitHub" },
+  { id: "skills", label: "Skills" },
+  { id: "achievements", label: "Achievements" },
+  { id: "why-me", label: "Why Me" },
   { id: "contact", label: "Contact" }
 ];
 

@@ -34,7 +34,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="w-full relative border-t border-white/5">
+    <section className="w-full relative border-t border-white/5">
       <MarqueeStrip words={["FULL-STACK", "AI ENGINEERING", "CLOUD NATIVE", "PERFORMANCE FIRST", "SYSTEM DESIGN", "ALWAYS SHIPPING", "DEVELOPER TOOLING"]} />
       <div className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 relative z-10">

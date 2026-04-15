@@ -80,7 +80,7 @@ export default function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="w-full relative border-t border-white/5">
+    <section className="w-full relative border-t border-white/5">
       <MarqueeStrip words={["VERIFIED SKILLS", "LIFELONG LEARNER", "CERTIFIED", "KEEP GROWING", "KNOWLEDGE IS POWER", "EARNED NOT GIVEN", "STAY CURIOUS"]} />
       <div className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 relative z-10">

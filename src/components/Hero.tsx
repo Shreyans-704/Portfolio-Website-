@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Download } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -88,7 +87,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="text-xl md:text-3xl font-light text-gray-200 tracking-tight leading-relaxed max-w-3xl m-0 mb-6 px-4 md:px-0"
         >
-          Full-Stack &amp; AI Developer building scalable, real-time, and AI-powered systems.
+          Building real-time systems, AI applications, and production-grade web platforms.
         </motion.h2>
 
         {/* Subtext */}
@@ -101,24 +100,6 @@ export default function Hero() {
           B.Tech IT @ NIT Jalandhar <span className="mx-2 opacity-30">|</span> Ex-Intern @ Engineers India Limited <span className="mx-2 opacity-30">|</span> Incoming Intern @ Conscendo Technologies
         </motion.p>
 
-        {/* CTA Button Layer (z-30) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-          className="relative z-30"
-        >
-          <a
-            href="/resume.pdf"
-            download="Resume - shreyansjaiswal.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-row items-center justify-center gap-3 px-10 py-5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md text-white hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-500 ease-out"
-          >
-            <span className="text-sm md:text-base font-medium tracking-wide">Explore My Work</span>
-            <Download className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
-        </motion.div>
       </div>
 
     </section>

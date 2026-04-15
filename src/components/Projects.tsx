@@ -71,7 +71,7 @@ export default function Projects() {
     <section className="w-full relative border-t border-white/5 bg-[#0b0f14] min-h-screen">
       <MarqueeStrip words={["SHIP IT", "BUILD IN PUBLIC", "PRODUCTION GRADE", "PROBLEM SOLVER", "CODE WITH PURPOSE", "REAL-WORLD IMPACT", "LAUNCH. ITERATE. GROW."]} />
       <div className="py-24 md:py-32">
-        <div id="projects" className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
 
           <div className="mb-16">
             <h3 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 text-white">

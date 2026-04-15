@@ -15,7 +15,7 @@ export default function About() {
   const imgY = useTransform(scrollYProgress, [0, 1], [-60, 60]);
 
   return (
-    <section id="about" ref={container} className="w-full relative border-t border-white/5 overflow-hidden">
+    <section ref={container} className="w-full relative border-t border-white/5 overflow-hidden">
       <MarqueeStrip words={["CURIOUS MIND", "CLEAN CODE", "PURPOSEFUL DESIGN", "SYSTEMS THINKER", "ALWAYS LEARNING", "HUMAN-CENTERED", "SCALABLE BY DEFAULT"]} />
       <div className="py-24 md:py-40 relative z-10">
       <div className="max-w-7xl mx-auto px-6 relative z-10">

@@ -35,7 +35,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="w-full relative border-t border-white/5">
+    <section className="w-full relative border-t border-white/5">
       <MarqueeStrip words={["ENTERPRISE ENGINEERING", "TEAM LEADERSHIP", "PRODUCTION READY", "REAL-WORLD IMPACT", "AGILE DEVELOPMENT", "END-TO-END OWNERSHIP"]} />
       <div className="py-24 md:py-32">
         <div className="max-w-4xl mx-auto px-6 relative z-10">

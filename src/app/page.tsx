@@ -4,6 +4,7 @@ import SystemSimulator from "@/components/SystemSimulator";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import GithubStats from "@/components/GithubStats";
 import Skills from "@/components/Skills";
 import Achievements from "@/components/Achievements";
 import WhyMe from "@/components/WhyMe";
@@ -19,9 +20,10 @@ export default function Home() {
         <div id="about"><About /></div>
         <div id="experience"><Experience /></div>
         <div id="projects"><Projects /></div>
+        <div id="github"><GithubStats /></div>
         <div id="skills"><Skills /></div>
-        <Achievements />
-        <WhyMe />
+        <div id="achievements"><Achievements /></div>
+        <div id="why-me"><WhyMe /></div>
         <div id="contact"><Contact /></div>
       
       <footer className="w-full py-8 border-t border-white/5 flex items-center justify-center px-6 bg-[#070708]">
