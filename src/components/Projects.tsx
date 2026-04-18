@@ -8,53 +8,94 @@ import MarqueeStrip from "./MarqueeStrip";
 
 const projectsData = [
   {
-    id: "live-code",
-    title: "Live-CODE-X",
-    category: "Full-Stack WebApp",
-    shortDesc: "Real-time collaborative code editor with <50ms sync latency.",
-    problem: "Remote engineering teams face latent disconnects when pair programming across standard IDEs with heavy overhead plugins.",
-    solution: "Engineered a lightweight, pure web-socket powered collaborative IDE running standard language servers natively in-browser.",
-    tech: ["MERN Stack", "Socket.io", "Docker", "Tailwind CSS"],
-    metrics: "Sub-50ms latency • Supports 10+ concurrent typists",
-    githubUrl: "https://github.com/Shreyans-704/Live-CODE-X",
-    liveUrl: "https://live-code-x.netlify.app/"
-  },
-  {
-    id: "narrately",
-    title: "Narrately AI",
-    category: "AI SaaS",
-    shortDesc: "Gen-AI powered storytelling wrapper wrapping Langchain primitives.",
-    problem: "Content creators lose massive operational hours structuring raw ideas into formatted story arcs.",
-    solution: "A continuous conversational agent that extracts narrative hooks from unformatted thoughts and structures them.",
-    tech: ["React", "FastAPI", "OpenAI API", "HuggingFace"],
-    metrics: "Reduced drafting time by 60% • 100+ beta testers",
-    githubUrl: "https://github.com/Shreyans-704/Narrately-AI-",
-    liveUrl: "https://www.narrately.in/"
-  },
-  {
-    id: "docu-mind",
-    title: "DocuMind",
-    category: "LLM Utility",
-    shortDesc: "Contextual document chat via RAG inference.",
-    problem: "Standard CTRL+F is useless for semantic queries within massive PDF volumes.",
-    solution: "Vectorized document indices mapped to a ChatGPT-like interface utilizing strict context-window retrieval.",
-    tech: ["LangChain", "Pinecone", "Gemini API", "Next.js"],
-    metrics: "Sub-2sec semantic query return • High accuracy precision",
-    githubUrl: "https://github.com/Shreyans-704/DocuMind---RAG-based-Document-Q-A-Engine",
-    liveUrl: "https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload"
-  },
-  {
-    id: "ai-wellness",
-    title: "AI Wellness",
-    category: "Chatbot & System",
-    shortDesc: "Cognitive sentiment tracking agent.",
-    problem: "Mental health platforms lack asynchronous passive conversational tracking.",
-    solution: "Automated check-in agent that parses sentiment via natural language inputs passively.",
-    tech: ["Node.js", "Express", "NLP Libraries", "MongoDB"],
-    metrics: "Continuous emotion tracking analytics dashboard",
-    githubUrl: "https://github.com/Shreyans-704/AI-Wellness-Health-Website",
-    liveUrl: "https://wellnessaiweb.netlify.app/"
-  }
+  id: "live-code",
+  title: "Live-CODE-X",
+  category: "Real-Time WebApp",
+  shortDesc: "Real-time collaborative IDE with ultra-low latency syncing.",
+  
+  problem: "Remote developers face delays and inefficiencies when collaborating using traditional IDEs and plugins.",
+  
+  solution: "Architected a WebSocket-based collaborative coding platform using Socket.IO with real-time synchronization and integrated Judge0 API for code execution.",
+  
+  tech: ["React", "Node.js", "Socket.IO", "Docker", "Jest"],
+  
+  metrics: "<50ms latency • 20+ concurrent users • 85% test coverage",
+  
+  githubUrl: "https://github.com/Shreyans-704/LIVE-CODE-X",
+  liveUrl: "https://live-code-x.netlify.app/"
+},
+
+{
+  id: "narrately",
+  title: "Narrately AI",
+  category: "AI SaaS Platform",
+  shortDesc: "AI-powered video and script generation platform.",
+  
+  problem: "Content creators spend excessive time converting ideas into structured scripts and videos.",
+  
+  solution: "Built a full-stack AI SaaS platform using Gemini API with Redis-based async processing and AWS S3 storage for scalable content generation.",
+  
+  tech: ["React", "Node.js", "Gemini API", "Redis", "AWS S3"],
+  
+  metrics: "40% faster rendering • 100+ users • <3s latency",
+  
+  githubUrl: "https://github.com/Shreyans-704/Narrately-AI-",
+  liveUrl: "https://www.narrately.in/"
+},
+
+{
+  id: "docu-mind",
+  title: "DocuMind",
+  category: "RAG AI System",
+  shortDesc: "Context-aware document Q&A using Retrieval-Augmented Generation.",
+  
+  problem: "Traditional search fails to answer semantic queries across large documents.",
+  
+  solution: "Developed a RAG pipeline using FastAPI and ChromaDB with hybrid retrieval (BM25 + embeddings) for accurate contextual responses.",
+  
+  tech: ["FastAPI", "LangChain", "ChromaDB", "Gemini API", "Next.js"],
+  
+  metrics: "Sub-2s response time • Handles 50+ documents efficiently",
+  
+  githubUrl: "https://github.com/Shreyans-704/DocuMind---RAG-based-Document-Q-A-Engine",
+  liveUrl: "https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload"
+},
+
+{
+  id: "ai-security-scanner",
+  title: "AI Security Scanner",
+  category: "Full-Stack AI Security Tool",
+  shortDesc: "AI-powered code vulnerability scanner with real-time detection and fixes.",
+  
+  problem: "Developers often miss common vulnerabilities like eval(), hardcoded secrets, and unsafe inputs due to lack of automated security checks.",
+  
+  solution: "Built an API-first security scanner using FastAPI with rule-based detection and Gemini-powered AI insights, integrated with a Next.js dashboard for real-time scanning and reporting.",
+  
+  tech: ["FastAPI", "Next.js", "TypeScript", "Tailwind CSS", "Gemini API"],
+  
+  metrics: "Detects 7+ vulnerability patterns • Real-time analysis • Deployed on Vercel + Render",
+  
+  githubUrl: "https://github.com/Shreyans-704/AI-Security-Scanner",
+  liveUrl: "https://ai-security-scanner-taupe.vercel.app"
+},
+
+{
+  id: "ai-wellness",
+  title: "AI Wellness",
+  category: "AI Health System",
+  shortDesc: "Mental health screening tool with automated reporting.",
+  
+  problem: "Manual mental health assessments are time-consuming and lack scalability.",
+  
+  solution: "Developed a PHQ-9 based screening system with automated PDF report generation using AI-driven insights.",
+  
+  tech: ["React", "Supabase", "Gemini API"],
+  
+  metrics: "40% reduction in documentation time • 100+ users",
+  
+  githubUrl: "https://github.com/Shreyans-704/AI-Wellness-Health-Website",
+  liveUrl: "https://wellnessaiweb.netlify.app/"
+}
 ];
 
 export default function Projects() {
@@ -173,6 +214,8 @@ export default function Projects() {
                   <button
                     onClick={() => setSelectedId(null)}
                     className="absolute top-8 right-8 p-3 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors z-30"
+                    title="Close"
+                    aria-label="Close project details"
                   >
                     <X className="w-5 h-5" />
                   </button>

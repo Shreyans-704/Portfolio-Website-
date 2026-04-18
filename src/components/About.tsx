@@ -40,7 +40,7 @@ export default function About() {
             <div className="pt-6 border-t border-white/10 mt-8">
               <h4 className="text-white font-medium uppercase tracking-widest text-sm mb-4">Interests & Domains</h4>
               <div className="flex flex-wrap gap-2 sm:gap-3">
-                {["AI", "Backend", "Real-Time", "Cloud & DevOps", "RAG & LLM", "Web Tech", "Performance"].map(interest => (
+                {["AI Systems","Backend Engineering","Real-Time Systems","Cloud & DevOps","RAG & LLM Applications","Full-Stack Web Development","Performance Optimization"].map(interest => (
                   <span key={interest} className="px-3 sm:px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-300 text-xs sm:text-sm font-medium hover:bg-white/10 transition-colors cursor-default backdrop-blur-md">
                     {interest}
                   </span>

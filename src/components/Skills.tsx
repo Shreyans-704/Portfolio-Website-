@@ -6,31 +6,31 @@ import { CopySlash, Server, Code2, Cloud, Database } from "lucide-react";
 
 export default function Skills() {
   const categories = [
-    {
-      title: "Frontend",
-      icon: <CopySlash className="w-5 h-5" />,
-      skills: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Three.js"]
-    },
-    {
-      title: "Backend & Systems",
-      icon: <Server className="w-5 h-5" />,
-      skills: ["Node.js", "Express", "FastAPI", "WebSockets", "REST APIs"]
-    },
-    {
-      title: "AI & Machine Learning",
-      icon: <Code2 className="w-5 h-5" />,
-      skills: ["RAG Architecture", "LangChain", "Gemini API", "Embeddings", "TensorFlow"]
-    },
-    {
-      title: "DevOps & Cloud",
-      icon: <Cloud className="w-5 h-5" />,
-      skills: ["Docker", "CI/CD Pipelines", "AWS", "Google Cloud Platform"]
-    },
-    {
-      title: "Databases",
-      icon: <Database className="w-5 h-5" />,
-      skills: ["MongoDB", "PostgreSQL", "Redis", "Vector DBs"]
-    }
+      {
+    title: "Frontend",
+    icon: <CopySlash className="w-5 h-5" />,
+    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "HTML", "CSS"]
+  },
+  {
+    title: "Backend & Systems",
+    icon: <Server className="w-5 h-5" />,
+    skills: ["Node.js", "Express.js", "FastAPI", "REST APIs", "Microservices"]
+  },
+  {
+    title: "AI & Machine Learning",
+    icon: <Code2 className="w-5 h-5" />,
+    skills: ["Generative AI (Gemini/OpenAI)", "RAG", "LangChain", "ChromaDB", "Embeddings"]
+  },
+  {
+    title: "DevOps & Cloud",
+    icon: <Cloud className="w-5 h-5" />,
+    skills: ["Docker", "CI/CD", "GitHub Actions", "AWS (EC2, S3)", "GCP", "Linux", "Nginx"]
+  },
+  {
+    title: "Databases",
+    icon: <Database className="w-5 h-5" />,
+    skills: ["MongoDB", "PostgreSQL", "Redis", "Supabase", "ChromaDB"]
+  }
   ];
 
   return (
