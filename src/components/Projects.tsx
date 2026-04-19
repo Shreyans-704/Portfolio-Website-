@@ -95,7 +95,25 @@ const projectsData = [
   
   githubUrl: "https://github.com/Shreyans-704/AI-Wellness-Health-Website",
   liveUrl: "https://wellnessaiweb.netlify.app/"
+},
+
+{
+  id: "self-healing-infra",
+  title: "Self-Healing Web App Infrastructure",
+  category: "DevOps & Cloud System",
+  shortDesc: "Resilient web infrastructure with auto-recovery and real-time monitoring.",
+
+  problem: "Traditional systems require manual intervention when applications crash, leading to downtime and poor reliability.",
+
+  solution: "Built a containerized system where applications automatically recover from failures using Docker restart policies, with real-time monitoring via Prometheus and Grafana for observability.",
+
+  tech: ["Node.js", "Docker", "Docker Compose", "Prometheus", "Grafana"],
+
+  metrics: "Auto-recovery within <10s • Real-time monitoring with 15s scrape interval • Zero manual intervention",
+
+  githubUrl: "https://github.com/Shreyans-704/Self-Healing-Web-App-Infrastructure"
 }
+
 ];
 
 export default function Projects() {
