@@ -1,5 +1,3 @@
-Here’s your **final clean README — ready to copy-paste** 👇
-
 ---
 
 ## 🚀 Shreyans Portfolio Website
@@ -99,8 +97,5 @@ Sentiment-aware chatbot
 * 🔗 GitHub + Live project links
 * 📱 Fully responsive
 * 🚀 Optimized for performance
-* 🛡️ Strong focus on **AI + Security systems**
 
 ---
-
-This version is **clean, consistent, and recruiter-ready**.
