@@ -1,55 +1,106 @@
-## PORTFOLIO WEBISTE : -
-🚀 Shreyans Portfolio Website
+Here’s your **final clean README — ready to copy-paste** 👇
 
-A modern, production-grade developer portfolio showcasing real-world projects in Full-Stack, DevOps, and AI systems.
+---
 
-🔗 Live Website: https://portfolio-website-chi-five-48.vercel.app/
+## 🚀 Shreyans Portfolio Website
 
-🧠 About
+A modern, production-grade developer portfolio showcasing real-world projects in **Full-Stack, DevOps, and AI systems**.
 
-This portfolio is designed to reflect real engineering thinking, not just UI.
+🔗 **Live Website:** [https://portfolio-website-chi-five-48.vercel.app/](https://portfolio-website-chi-five-48.vercel.app/)
+
+---
+
+## 🧠 About
+
+This portfolio reflects **real engineering thinking**, not just UI.
 
 It highlights:
 
-Scalable full-stack applications
-AI-powered systems
-Real-world problem solving
-Production-ready architecture
-⚡ Tech Stack
-Frontend: Next.js 14, React, TypeScript
-Styling: Tailwind CSS
-Animations: Framer Motion
-Icons: Lucide + React Icons
-Deployment: Vercel
-📂 Featured Projects
-🔹 Live-CODE-X
+* Scalable full-stack applications
+* AI-powered systems
+* Real-world problem solving
+* Production-ready architecture
+* Security-focused AI tooling
+
+---
+
+## ⚡ Tech Stack
+
+**Frontend:** Next.js 14, React, TypeScript
+**Styling:** Tailwind CSS
+**Animations:** Framer Motion
+**Icons:** Lucide + React Icons
+**Deployment:** Vercel
+
+---
+
+## 📂 Production Projects & Systems
+
+### 🔹 AI Security Scanner 🛡️
+
+AI-powered vulnerability detection and code analysis platform
+
+* Detects security flaws like injections, hardcoded secrets, and misconfigurations using LLM-based analysis
+* Provides real-time risk classification with actionable fix suggestions for developers
+
+👉 Live: [https://ai-security-scanner-taupe.vercel.app/](https://ai-security-scanner-taupe.vercel.app/)
+
+---
+
+### 🔹 Live-CODE-X
+
 Real-time collaborative code editor
-Sub-50ms sync latency
-Built using MERN + WebSockets + Docker
 
-👉 Live: https://live-code-x.netlify.app/
+* Sub-50ms sync latency
+* MERN + WebSockets + Docker
+* Multi-user live editing
 
-🔹 Narrately AI
-AI storytelling assistant using LLM pipelines
-Converts raw thoughts into structured narratives
+👉 Live: [https://live-code-x.netlify.app/](https://live-code-x.netlify.app/)
 
-👉 Live: https://www.narrately.in/
+---
 
-🔹 DocuMind
+### 🔹 DocuMind
+
 RAG-based document Q&A system
-Semantic search over large PDFs
 
-👉 Live: https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload
+* Semantic search over large PDFs
+* Context-aware responses using LLMs
 
-🔹 AI Wellness
-Sentiment-aware chatbot for mental health tracking
-Continuous conversational analytics
+👉 Live: [https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload](https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload)
 
-👉 Live: https://wellnessaiweb.netlify.app/
+---
 
-🎯 Key Features
-⚡ Smooth animations with Framer Motion
-🎨 Clean dark UI with modern design
-🔗 GitHub + Live project links
-📱 Fully responsive
-🚀 Optimized for performance
+### 🔹 Narrately AI
+
+AI storytelling assistant
+
+* Converts raw thoughts into structured narratives
+* Context-driven generation pipeline
+
+👉 Live: [https://www.narrately.in/](https://www.narrately.in/)
+
+---
+
+### 🔹 AI Wellness
+
+Sentiment-aware chatbot
+
+* Tracks emotional patterns over time
+* Conversational analytics
+
+👉 Live: [https://wellnessaiweb.netlify.app/](https://wellnessaiweb.netlify.app/)
+
+---
+
+## 🎯 Key Features
+
+* ⚡ Smooth animations with Framer Motion
+* 🎨 Clean dark UI with modern design
+* 🔗 GitHub + Live project links
+* 📱 Fully responsive
+* 🚀 Optimized for performance
+* 🛡️ Strong focus on **AI + Security systems**
+
+---
+
+This version is **clean, consistent, and recruiter-ready**.
