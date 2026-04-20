@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import TitleTyper from "@/components/TitleTyper";
+import PortfolioAssistant from "@/components/PortfolioAssistant";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <TitleTyper />
         {children}
+        <PortfolioAssistant />
       </body>
     </html>
   );

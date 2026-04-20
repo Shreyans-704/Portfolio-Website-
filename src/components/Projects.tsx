@@ -8,111 +8,111 @@ import MarqueeStrip from "./MarqueeStrip";
 
 const projectsData = [
   {
-  id: "live-code",
-  title: "Live-CODE-X",
-  category: "Real-Time WebApp",
-  shortDesc: "Real-time collaborative IDE with ultra-low latency syncing.",
-  
-  problem: "Remote developers face delays and inefficiencies when collaborating using traditional IDEs and plugins.",
-  
-  solution: "Architected a WebSocket-based collaborative coding platform using Socket.IO with real-time synchronization and integrated Judge0 API for code execution.",
-  
-  tech: ["React", "Node.js", "Socket.IO", "Docker", "Jest"],
-  
-  metrics: "<50ms latency • 20+ concurrent users • 85% test coverage",
-  
-  githubUrl: "https://github.com/Shreyans-704/LIVE-CODE-X",
-  liveUrl: "https://live-code-x.netlify.app/"
-},
+    id: "live-code",
+    title: "Live-CODE-X",
+    category: "Real-Time WebApp",
+    shortDesc: "Real-time collaborative IDE with ultra-low latency syncing.",
 
-{
-  id: "narrately",
-  title: "Narrately AI",
-  category: "AI SaaS Platform",
-  shortDesc: "AI-powered video and script generation platform.",
-  
-  problem: "Content creators spend excessive time converting ideas into structured scripts and videos.",
-  
-  solution: "Built a full-stack AI SaaS platform using Gemini API with Redis-based async processing and AWS S3 storage for scalable content generation.",
-  
-  tech: ["React", "Node.js", "Gemini API", "Redis", "AWS S3"],
-  
-  metrics: "40% faster rendering • 100+ users • <3s latency",
-  
-  githubUrl: "https://github.com/Shreyans-704/Narrately-AI-",
-  liveUrl: "https://www.narrately.in/"
-},
+    problem: "Remote developers face delays and inefficiencies when collaborating using traditional IDEs and plugins.",
 
-{
-  id: "docu-mind",
-  title: "DocuMind",
-  category: "RAG AI System",
-  shortDesc: "Context-aware document Q&A using Retrieval-Augmented Generation.",
-  
-  problem: "Traditional search fails to answer semantic queries across large documents.",
-  
-  solution: "Developed a RAG pipeline using FastAPI and ChromaDB with hybrid retrieval (BM25 + embeddings) for accurate contextual responses.",
-  
-  tech: ["FastAPI", "LangChain", "ChromaDB", "Gemini API", "Next.js"],
-  
-  metrics: "Sub-2s response time • Handles 50+ documents efficiently",
-  
-  githubUrl: "https://github.com/Shreyans-704/DocuMind---RAG-based-Document-Q-A-Engine",
-  liveUrl: "https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload"
-},
+    solution: "Architected a WebSocket-based collaborative coding platform using Socket.IO with real-time synchronization and integrated Judge0 API for code execution.",
 
-{
-  id: "ai-security-scanner",
-  title: "AI Security Scanner",
-  category: "Full-Stack AI Security Tool",
-  shortDesc: "AI-powered code vulnerability scanner with real-time detection and fixes.",
-  
-  problem: "Developers often miss common vulnerabilities like eval(), hardcoded secrets, and unsafe inputs due to lack of automated security checks.",
-  
-  solution: "Built an API-first security scanner using FastAPI with rule-based detection and Gemini-powered AI insights, integrated with a Next.js dashboard for real-time scanning and reporting.",
-  
-  tech: ["FastAPI", "Next.js", "TypeScript", "Tailwind CSS", "Gemini API"],
-  
-  metrics: "Detects 7+ vulnerability patterns • Real-time analysis • Deployed on Vercel + Render",
-  
-  githubUrl: "https://github.com/Shreyans-704/AI-Security-Scanner",
-  liveUrl: "https://ai-security-scanner-taupe.vercel.app"
-},
+    tech: ["React", "Node.js", "Socket.IO", "Docker", "Jest"],
 
-{
-  id: "ai-wellness",
-  title: "AI Wellness",
-  category: "AI Health System",
-  shortDesc: "Mental health screening tool with automated reporting.",
-  
-  problem: "Manual mental health assessments are time-consuming and lack scalability.",
-  
-  solution: "Developed a PHQ-9 based screening system with automated PDF report generation using AI-driven insights.",
-  
-  tech: ["React", "Supabase", "Gemini API"],
-  
-  metrics: "40% reduction in documentation time • 100+ users",
-  
-  githubUrl: "https://github.com/Shreyans-704/AI-Wellness-Health-Website",
-  liveUrl: "https://wellnessaiweb.netlify.app/"
-},
+    metrics: "<50ms latency • 20+ concurrent users • 85% test coverage",
 
-{
-  id: "self-healing-infra",
-  title: "Self-Healing Web App Infrastructure",
-  category: "DevOps & Cloud System",
-  shortDesc: "Resilient web infrastructure with auto-recovery and real-time monitoring.",
+    githubUrl: "https://github.com/Shreyans-704/LIVE-CODE-X",
+    liveUrl: "https://live-code-x.netlify.app/"
+  },
 
-  problem: "Traditional systems require manual intervention when applications crash, leading to downtime and poor reliability.",
+  {
+    id: "narrately",
+    title: "Narrately AI",
+    category: "AI SaaS Platform",
+    shortDesc: "AI-powered video and script generation platform.",
 
-  solution: "Built a containerized system where applications automatically recover from failures using Docker restart policies, with real-time monitoring via Prometheus and Grafana for observability.",
+    problem: "Content creators spend excessive time converting ideas into structured scripts and videos.",
 
-  tech: ["Node.js", "Docker", "Docker Compose", "Prometheus", "Grafana"],
+    solution: "Built a full-stack AI SaaS platform using Gemini API with Redis-based async processing and AWS S3 storage for scalable content generation.",
 
-  metrics: "Auto-recovery within <10s • Real-time monitoring with 15s scrape interval • Zero manual intervention",
+    tech: ["React", "Node.js", "Gemini API", "Redis", "AWS S3"],
 
-  githubUrl: "https://github.com/Shreyans-704/Self-Healing-Web-App-Infrastructure"
-}
+    metrics: "40% faster rendering • 100+ users • <3s latency",
+
+    githubUrl: "https://github.com/Shreyans-704/Narrately-AI-",
+    liveUrl: "https://www.narrately.in/"
+  },
+
+  {
+    id: "docu-mind",
+    title: "DocuMind",
+    category: "RAG AI System",
+    shortDesc: "Context-aware document Q&A using Retrieval-Augmented Generation.",
+
+    problem: "Traditional search fails to answer semantic queries across large documents.",
+
+    solution: "Developed a RAG pipeline using FastAPI and ChromaDB with hybrid retrieval (BM25 + embeddings) for accurate contextual responses.",
+
+    tech: ["FastAPI", "LangChain", "ChromaDB", "Gemini API", "Next.js"],
+
+    metrics: "Sub-2s response time • Handles 50+ documents efficiently",
+
+    githubUrl: "https://github.com/Shreyans-704/DocuMind---RAG-based-Document-Q-A-Engine",
+    liveUrl: "https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload"
+  },
+
+  {
+    id: "ai-security-scanner",
+    title: "AI Security Scanner",
+    category: "Full-Stack AI Security Tool",
+    shortDesc: "AI-powered code vulnerability scanner with real-time detection and fixes.",
+
+    problem: "Developers often miss common vulnerabilities like eval(), hardcoded secrets, and unsafe inputs due to lack of automated security checks.",
+
+    solution: "Built an API-first security scanner using FastAPI with rule-based detection and Gemini-powered AI insights, integrated with a Next.js dashboard for real-time scanning and reporting.",
+
+    tech: ["FastAPI", "Next.js", "TypeScript", "Tailwind CSS", "Gemini API"],
+
+    metrics: "Detects 7+ vulnerability patterns • Real-time analysis • Deployed on Vercel + Render",
+
+    githubUrl: "https://github.com/Shreyans-704/AI-Security-Scanner",
+    liveUrl: "https://ai-security-scanner-taupe.vercel.app"
+  },
+
+  {
+    id: "ai-wellness",
+    title: "AI Wellness",
+    category: "AI Health System",
+    shortDesc: "Mental health screening tool with automated reporting.",
+
+    problem: "Manual mental health assessments are time-consuming and lack scalability.",
+
+    solution: "Developed a PHQ-9 based screening system with automated PDF report generation using AI-driven insights.",
+
+    tech: ["React", "Supabase", "Gemini API"],
+
+    metrics: "40% reduction in documentation time • 100+ users",
+
+    githubUrl: "https://github.com/Shreyans-704/AI-Wellness-Health-Website",
+    liveUrl: "https://wellnessaiweb.netlify.app/"
+  },
+
+  {
+    id: "self-healing-infra",
+    title: "Self-Healing Web App Infrastructure",
+    category: "DevOps & Cloud System",
+    shortDesc: "Resilient web infrastructure with auto-recovery and real-time monitoring.",
+
+    problem: "Traditional systems require manual intervention when applications crash, leading to downtime and poor reliability.",
+
+    solution: "Built a containerized system where applications automatically recover from failures using Docker restart policies, with real-time monitoring via Prometheus and Grafana for observability.",
+
+    tech: ["Node.js", "Docker", "Docker Compose", "Prometheus", "Grafana"],
+
+    metrics: "Auto-recovery within <10s • Real-time monitoring with 15s scrape interval • Zero manual intervention",
+
+    githubUrl: "https://github.com/Shreyans-704/Self-Healing-Web-App-Infrastructure"
+  }
 
 ];
 
