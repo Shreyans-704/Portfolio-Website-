@@ -194,7 +194,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="absolute top-0 right-0 p-8 opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out z-20"
+                    className="absolute top-0 right-0 p-8 opacity-100 translate-y-0 sm:opacity-0 sm:-translate-y-4 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-300 ease-out z-20"
                     title="View Live Project"
                   >
                     <div className="bg-blue-500/10 p-3 rounded-full border border-blue-500/20 hover:bg-blue-500/20 transition-colors">
@@ -230,12 +230,12 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="p-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/10 hover:scale-110 active:scale-95 transition-all duration-300 opacity-0 group-hover:opacity-100"
+                      className="p-2 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/10 hover:scale-110 active:scale-95 transition-all duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
                       title="View Source Code"
                     >
                       <FaGithub className="w-5 h-5" />
                     </a>
-                    <span className="text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-sm font-medium text-white opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                       View Project
                     </span>
                   </div>
