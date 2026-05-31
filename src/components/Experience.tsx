@@ -7,16 +7,19 @@ import MarqueeStrip from "./MarqueeStrip";
 export default function Experience() {
   const experiences = [
     {
-      role: "Software Engineering Intern",
+      role: "Salesforce Intern",
       company: "Conscendo Technologies",
       companyLink: "https://www.linkedin.com/company/conscendo/posts/?feedView=all",
-      duration: "June 2026 - Aug 2026",
-      highlight: "AI-Powered Products",
-      description: "Joining the engineering team to build scalable and responsive AI-integrated solutions for enterprise clients.",
+      duration: "June 2026 – Present",
+      location: "Hyderabad, India",
+      highlight: "CRM Automation",
+      description: "Working on Salesforce-based CRM automation and enterprise cloud solutions, focusing on improving efficiency through workflows and triggers.",
       bullets: [
-        "Upcoming internship focused on modern DevOps tools with GenAI integrations"
+        "Developing CRM workflows using Apex and Lightning to automate processes and reduce manual effort",
+        "Implementing Salesforce automation (Flows, Triggers) to improve efficiency and reduce manual operations",
+        "Collaborating on enterprise-scale cloud applications handling business data and process optimization",
       ],
-      tech: ["React", "Next.js", "AI/LLMs", "Salesforce CLI", "GCP", "AWS"]
+      tech: ["Salesforce", "Apex", "Lightning", "CRM", "Automation", "Cloud"]
     },
     {
       role: "Software Engineering Summer Trainee",

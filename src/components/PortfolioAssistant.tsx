@@ -86,7 +86,7 @@ export default function PortfolioAssistant() {
                   </div>
                 </div>
               </div>
-              <button 
+              <button
                 onClick={() => setIsOpen(false)}
                 className="p-2 hover:bg-white/5 rounded-full text-gray-400 hover:text-white transition-colors"
               >
@@ -95,13 +95,13 @@ export default function PortfolioAssistant() {
             </div>
 
             {/* Messages Area */}
-            <div 
+            <div
               ref={scrollRef}
               className="flex-1 overflow-y-auto p-4 space-y-4 no-scrollbar"
             >
               {messages.map((msg, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className={cn(
                     "flex w-full mb-2",
                     msg.role === "user" ? "justify-end" : "justify-start"
@@ -113,16 +113,16 @@ export default function PortfolioAssistant() {
                   )}>
                     <div className={cn(
                       "w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs border",
-                      msg.role === "user" 
-                        ? "bg-white/10 border-white/10 text-white" 
+                      msg.role === "user"
+                        ? "bg-white/10 border-white/10 text-white"
                         : "bg-blue-500/10 border-blue-500/20 text-blue-400"
                     )}>
                       {msg.role === "user" ? <User size={14} /> : <Bot size={14} />}
                     </div>
                     <div className={cn(
                       "p-3 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap",
-                      msg.role === "user" 
-                        ? "bg-blue-600 text-white rounded-tr-none shadow-lg shadow-blue-500/10" 
+                      msg.role === "user"
+                        ? "bg-blue-600 text-white rounded-tr-none shadow-lg shadow-blue-500/10"
                         : "bg-white/5 text-gray-200 border border-white/5 rounded-tl-none"
                     )}>
                       {msg.content}
@@ -148,7 +148,7 @@ export default function PortfolioAssistant() {
                 placeholder="Ask me anything..."
                 className="flex-1 bg-white/[0.03] border border-white/10 rounded-xl px-4 py-2 text-white text-sm focus:outline-none focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-500"
               />
-              <button 
+              <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
                 className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:hover:bg-blue-600 text-white p-2.5 rounded-xl transition-all shadow-lg shadow-blue-500/20"
@@ -167,8 +167,8 @@ export default function PortfolioAssistant() {
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
           "w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 border backdrop-blur-md",
-          isOpen 
-            ? "bg-white/10 border-white/20 text-white" 
+          isOpen
+            ? "bg-white/10 border-white/20 text-white"
             : "bg-blue-600 border-blue-500 text-white hover:bg-blue-500 animate-bounce"
         )}
       >

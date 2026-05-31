@@ -112,6 +112,40 @@ const projectsData = [
     metrics: "Auto-recovery within <10s • Real-time monitoring with 15s scrape interval • Zero manual intervention",
 
     githubUrl: "https://github.com/Shreyans-704/Self-Healing-Web-App-Infrastructure"
+  },
+
+  {
+    id: "neuroscan-ai",
+    title: "NeuroScan-AI",
+    category: "AI Project",
+    shortDesc: "AI-based medical imaging tool for intelligent pattern detection and diagnosis support.",
+
+    problem: "Early diagnosis of medical conditions from imaging data is time-intensive and prone to human error without intelligent assistance tools.",
+
+    solution: "Built an AI-powered medical imaging analysis tool using deep learning models in TensorFlow/PyTorch and OpenCV to detect patterns and assist clinicians in early-stage diagnosis.",
+
+    tech: ["Python", "TensorFlow", "PyTorch", "OpenCV", "Deep Learning"],
+
+    metrics: "AI-assisted pattern detection • Early diagnosis support • Deep learning inference pipeline",
+
+    githubUrl: "https://github.com/Shreyans-704/NeuroScan-AI"
+  },
+
+  {
+    id: "alzheimer-detection",
+    title: "Alzheimer Detection using DL Models",
+    category: "AI Project",
+    shortDesc: "AI model for Alzheimer's detection using MRI & PET scan imaging.",
+
+    problem: "Early detection of Alzheimer's disease is critical yet challenging, as manual analysis of MRI and PET scan data is time-consuming and subject to diagnostic variability.",
+
+    solution: "Developed a deep learning pipeline using TensorFlow/PyTorch and OpenCV to classify Alzheimer's stages from MRI images and PET scan data with high diagnostic accuracy.",
+
+    tech: ["Python", "TensorFlow", "PyTorch", "OpenCV", "Medical Imaging"],
+
+    metrics: "DL-based MRI & PET scan classification • Multi-stage Alzheimer's detection • Automated diagnostic pipeline",
+
+    githubUrl: "https://github.com/Shreyans-704/Alzheimer-Detection-Using-DL-Models-on-MRI-Images-with-PET-Scans"
   }
 
 ];
@@ -154,18 +188,20 @@ export default function Projects() {
                 className="group cursor-pointer relative flex flex-col p-8 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-md hover:bg-white/[0.04] hover:shadow-[0_0_40px_rgba(59,130,246,0.1)] hover:scale-[1.01] transition-all duration-500 overflow-hidden"
               >
                 {/* Blue Arrow -> Live Deployment Project */}
-                <a
-                  href={p.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="absolute top-0 right-0 p-8 opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out z-20"
-                  title="View Live Project"
-                >
-                  <div className="bg-blue-500/10 p-3 rounded-full border border-blue-500/20 hover:bg-blue-500/20 transition-colors">
-                    <ArrowRight className="w-5 h-5 text-blue-400 -rotate-45" />
-                  </div>
-                </a>
+                {p.liveUrl && (
+                  <a
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="absolute top-0 right-0 p-8 opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out z-20"
+                    title="View Live Project"
+                  >
+                    <div className="bg-blue-500/10 p-3 rounded-full border border-blue-500/20 hover:bg-blue-500/20 transition-colors">
+                      <ArrowRight className="w-5 h-5 text-blue-400 -rotate-45" />
+                    </div>
+                  </a>
+                )}
 
                 <motion.span layoutId={`category-${p.id}`} className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-4 block">
                   {p.category}
@@ -254,15 +290,17 @@ export default function Projects() {
                             <FaGithub className="w-4 h-4" />
                             Source Code
                           </a>
-                          <a
-                            href={p.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-all font-medium text-sm shadow-[0_0_15px_rgba(37,99,235,0.4)]"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                            Live Project
-                          </a>
+                          {p.liveUrl && (
+                            <a
+                              href={p.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-all font-medium text-sm shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                              Live Project
+                            </a>
+                          )}
                         </div>
                       </div>
 
