@@ -117,7 +117,7 @@ const projectsData = [
   {
     id: "neuroscan-ai",
     title: "NeuroScan-AI",
-    category: "AI Project",
+    category: "ML Project",
     shortDesc: "AI-based medical imaging tool for intelligent pattern detection and diagnosis support.",
 
     problem: "Early diagnosis of medical conditions from imaging data is time-intensive and prone to human error without intelligent assistance tools.",
@@ -134,8 +134,8 @@ const projectsData = [
   {
     id: "alzheimer-detection",
     title: "Alzheimer Detection using DL Models",
-    category: "AI Project",
-    shortDesc: "AI model for Alzheimer's detection using MRI & PET scan imaging.",
+    category: "ML Project",
+    shortDesc: "ML model for Alzheimer's detection using MRI & PET scan imaging.",
 
     problem: "Early detection of Alzheimer's disease is critical yet challenging, as manual analysis of MRI and PET scan data is time-consuming and subject to diagnostic variability.",
 
