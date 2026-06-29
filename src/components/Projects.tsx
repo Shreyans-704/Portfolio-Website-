@@ -146,7 +146,41 @@ const projectsData = [
     metrics: "DL-based MRI & PET scan classification • Multi-stage Alzheimer's detection • Automated diagnostic pipeline",
 
     githubUrl: "https://github.com/Shreyans-704/Alzheimer-Detection-Using-DL-Models-on-MRI-Images-with-PET-Scans"
-  }
+  },
+
+  {
+    id: "decentralized-lan-file-sharing",
+    title: "Decentralized LAN File Sharing",
+    category: "Networking Project",
+    shortDesc: "A peer-to-peer LAN file sharing application with automatic device discovery and direct file transfers.",
+
+    problem: "Most file sharing platforms rely on cloud servers or internet connectivity, introducing latency, privacy concerns, and dependency on external services for transferring files between devices on the same network.",
+
+    solution: "Designed and developed a decentralized LAN file sharing system that enables devices on the same local network to automatically discover each other using UDP broadcasts and exchange files directly over TCP sockets. The application eliminates the need for centralized servers while providing fast, secure, and efficient local transfers.",
+
+    tech: ["C++", "Winsock", "TCP Sockets", "UDP Broadcast", "CMake", "Multithreading", "Computer Networks"],
+
+    metrics: "100% serverless architecture • Automatic peer discovery • Direct high-speed LAN transfers • TCP-based reliable communication • Offline local network support",
+
+    githubUrl: "https://github.com/Shreyans-704/decentralized-lan-file-sharing"
+  },
+
+  {
+    id: "dna-pathogen-prediction-ai",
+    title: "DNA Pathogen Prediction AI",
+    category: "AI / Bioinformatics",
+    shortDesc: "AI-powered pathogen prediction system that analyzes DNA sequences to identify potential pathogens using machine learning.",
+
+    problem: "Accurate identification of pathogens from DNA sequences is essential for disease surveillance and biomedical research, but traditional analysis methods can be computationally intensive and require significant domain expertise.",
+
+    solution: "Developed an AI-driven bioinformatics pipeline that processes DNA sequence data, extracts genomic features, and leverages machine learning models to classify and predict potential pathogens. The system automates sequence analysis, enabling faster and more reliable pathogen identification for research and diagnostic applications.",
+
+    tech: ["Python", "Machine Learning", "Scikit-learn", "Bioinformatics", "DNA Sequence Analysis", "Pandas", "NumPy"],
+
+    metrics: "Automated DNA sequence analysis • AI-based pathogen classification • Genomic feature extraction • End-to-end prediction pipeline",
+
+    githubUrl: "https://github.com/Shreyans-704/DNA-pathogen-prediction-ai"
+  },
 
 ];
 
