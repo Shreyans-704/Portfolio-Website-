@@ -100,6 +100,31 @@ export default function Hero() {
           B.Tech IT @ NIT Jalandhar <span className="mx-2 opacity-30">|</span> Ex-Intern @ Engineers India Limited <span className="mx-2 opacity-30">|</span> Incoming Intern @ Conscendo Technologies
         </motion.p>
 
+        {/* Download Resume Button */}
+        <motion.a
+          href="/resume.pdf"
+          download="Resume - Shreyans Jaiswal.pdf"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
+          whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59,130,246,0.5), 0 0 60px rgba(59,130,246,0.2)" }}
+          whileTap={{ scale: 0.97 }}
+          className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-blue-500/40 bg-blue-600/10 backdrop-blur-sm text-white text-sm font-medium tracking-wide cursor-pointer no-underline transition-colors hover:bg-blue-600/20 hover:border-blue-400/60"
+          style={{ boxShadow: "0 0 15px rgba(59,130,246,0.15), inset 0 1px 0 rgba(255,255,255,0.05)" }}
+        >
+          {/* Download icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="w-4 h-4 text-blue-400"
+          >
+            <path d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.614L6.295 8.235a.75.75 0 1 0-1.09 1.03l4.25 4.5a.75.75 0 0 0 1.09 0l4.25-4.5a.75.75 0 0 0-1.09-1.03l-2.955 3.129V2.75Z" />
+            <path d="M3.5 12.75a.75.75 0 0 0-1.5 0v2.5A2.75 2.75 0 0 0 4.75 18h10.5A2.75 2.75 0 0 0 18 15.25v-2.5a.75.75 0 0 0-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5Z" />
+          </svg>
+          Download Resume
+        </motion.a>
+
       </div>
 
     </section>
