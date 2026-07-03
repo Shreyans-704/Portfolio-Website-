@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -43,7 +43,6 @@ const navItems = [
   { id: "contact", label: "Contact" }
 ];
 
-// Hamburger / Close icon component
 const HamburgerIcon = ({ isOpen }: { isOpen: boolean }) => (
   <div className="flex flex-col gap-[5px] w-5">
     <span className={`block h-[2px] bg-gray-400 transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[7px] bg-white" : "w-5"}`} />
@@ -54,61 +53,125 @@ const HamburgerIcon = ({ isOpen }: { isOpen: boolean }) => (
 
 export default function Sidebar() {
   const [activeSection, setActiveSection] = useState("home");
-  const [isOpen, setIsOpen] = useState(false); // Closed by default on all screens
+  const [isOpen, setIsOpen] = useState(false);
 
+  // Refs for outside-click detection
+  const sidebarRef = useRef<HTMLElement>(null);
+  const toggleBtnRef = useRef<HTMLButtonElement>(null);
+
+  const close = useCallback(() => setIsOpen(false), []);
+
+  // Open by default on desktop
   useEffect(() => {
-    // Open by default on desktop, closed on mobile
     if (window.innerWidth >= 1024) {
       setIsOpen(true);
     }
   }, []);
 
+  // Active-section tracking via IntersectionObserver
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
       { rootMargin: "-40% 0px -40% 0px" }
     );
 
     navItems.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
   }, []);
 
+  // Outside-click / outside-touch: close sidebar
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleOutside = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node;
+      // Ignore clicks inside the sidebar itself
+      if (sidebarRef.current?.contains(target)) return;
+      // Ignore clicks on the hamburger toggle (it handles its own toggle)
+      if (toggleBtnRef.current?.contains(target)) return;
+      close();
+    };
+
+    // Use capture phase so we catch it before any inner handlers
+    document.addEventListener("mousedown", handleOutside, true);
+    document.addEventListener("touchstart", handleOutside, { capture: true, passive: true });
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutside, true);
+      document.removeEventListener("touchstart", handleOutside, { capture: true, passive: true } as EventListenerOptions);
+    };
+  }, [isOpen, close]);
+
+  // Escape key closes sidebar
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) close();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, close]);
+
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Navigate then close on mobile/tablet
+  const handleNavClick = (id: string) => {
+    scrollToSection(id);
+    if (window.innerWidth < 1024) close();
   };
 
   return (
     <>
       {/* Floating toggle button — always visible */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        ref={toggleBtnRef}
+        onClick={() => setIsOpen((prev) => !prev)}
         className="fixed top-6 left-6 z-[60] p-2.5 rounded-xl bg-[#070708]/80 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-200 shadow-lg"
         aria-label="Toggle sidebar"
+        aria-expanded={isOpen}
+        aria-controls="main-sidebar"
       >
         <HamburgerIcon isOpen={isOpen} />
       </button>
 
+      {/* Backdrop overlay — mobile/tablet only, closes sidebar on tap */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="sidebar-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[2px] lg:hidden"
+            aria-hidden="true"
+            onMouseDown={close}
+            onTouchStart={close}
+          />
+        )}
+      </AnimatePresence>
+
       <motion.aside
+        id="main-sidebar"
+        ref={sidebarRef}
         initial={false}
         animate={{ x: isOpen ? 0 : -280 }}
         transition={{ type: "spring", stiffness: 300, damping: 32 }}
         className="fixed top-0 left-0 h-screen w-72 md:w-64 bg-[#070708]/95 backdrop-blur-3xl border-r border-white/5 z-50 flex flex-col justify-between py-12"
+        aria-label="Site navigation"
       >
         {/* Brand / Logo */}
-        <div className="px-10 cursor-pointer" onClick={() => scrollToSection("home")}>
+        <div className="px-10 cursor-pointer" onClick={() => handleNavClick("home")}>
           <div className="relative w-12 h-12 rounded-2xl overflow-hidden mb-6 shadow-[0_0_30px_rgba(255,255,255,0.15)]">
             <Image src="/logo.png" alt="Shreyans Logo" fill className="object-contain" />
           </div>
@@ -123,7 +186,7 @@ export default function Sidebar() {
             return (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className={`relative px-4 py-3 text-left text-sm font-medium transition-all duration-300 rounded-xl group ${
                   isActive ? "text-white" : "text-gray-500 hover:text-gray-200"
                 }`}
