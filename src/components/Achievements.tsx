@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Award, ShieldCheck, Trophy, Target } from "lucide-react";
+import { ExternalLink, Award, ShieldCheck, Trophy, Target, Briefcase, Sparkles, Code2 } from "lucide-react";
 import MarqueeStrip from "./MarqueeStrip";
 
 export default function Achievements() {
@@ -84,7 +84,11 @@ export default function Achievements() {
     { title: "Built 4+ Production Apps", icon: <Target className="w-4 h-4 text-blue-400" /> },
     { title: "EIL System (500+ Users)", icon: <ShieldCheck className="w-4 h-4 text-green-400" /> },
     { title: "<50ms Sync Latency", icon: <Trophy className="w-4 h-4 text-yellow-400" /> },
-    { title: "AI SaaS (100+ Users)", icon: <Award className="w-4 h-4 text-orange-400" /> }
+    { title: "AI SaaS (100+ Users)", icon: <Award className="w-4 h-4 text-orange-400" /> },
+    { title: "Amazon MLSS Scholar", icon: <Trophy className="w-4 h-4 text-yellow-400" />},
+    { title: "Salesforce Intern", icon: <Briefcase className="w-4 h-4 text-blue-400" />},
+    { title: "12 Gen AI Badges", icon: <Sparkles className="w-4 h-4 text-purple-400" />},
+    { title: "200+ DSA Problems", icon: <Code2 className="w-4 h-4 text-green-400" />}
   ];
 
   return (
