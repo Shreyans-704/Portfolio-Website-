@@ -17,13 +17,13 @@ export default function Contact() {
           Let's build something impactful.
         </h3>
         <p className="text-lg md:text-xl text-gray-400 mb-16 font-light max-w-2xl mx-auto leading-relaxed">
-          Open to internships, AI/Software roles, and high-impact collaborations.
+          Open to internships, Backend/DevOps/AI/Software roles, and high-impact collaborations.
         </p>
 
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 w-full px-4">
           {/* Primary Action */}
           <a
-            href="mailto:shreyansj.it.23@nitj.ac.in"
+            href="mailto:shreyans.jaiwal704@gmail.com"
             className="flex items-center gap-3 px-8 py-4 min-h-[52px] rounded-full bg-white text-black hover:bg-gray-200 hover:scale-[1.03] transition-all duration-300 w-full sm:w-auto justify-center font-semibold tracking-wide"
           >
             <Mail className="w-5 h-5" />
