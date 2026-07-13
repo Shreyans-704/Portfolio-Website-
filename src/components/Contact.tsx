@@ -64,7 +64,7 @@ export default function Contact() {
           {/* Download Resume Special */}
           <a
             href="/resume.pdf"
-            download="Resume - Shreyans Jaiswal.pdf"
+            download="Resume_shreyans.pdf"
             className="flex items-center gap-3 px-8 py-3.5 min-h-[48px] rounded-full bg-transparent border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/50 hover:scale-[1.03] transition-all duration-300 font-medium w-full sm:w-auto justify-center sm:ml-4"
           >
             <Download className="w-4 h-4" />
