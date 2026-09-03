@@ -5,19 +5,19 @@ import MarqueeStrip from "./MarqueeStrip";
 
 export default function GithubStats() {
   const stats = [
-    {
-      title: "GitHub Stats",
-      url: "https://github-readme-stats-sigma-five.vercel.app/api?username=Shreyans-704&show_icons=true&theme=tokyonight&hide_border=true",
-    },
-    {
-      title: "Contribution Streak",
-      url: "https://streak-stats.demolab.com?user=Shreyans-704&theme=tokyonight&hide_border=true",
-    },
-    {
-      title: "Top Languages",
-      url: "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Shreyans-704&layout=compact&theme=tokyonight&hide_border=true",
-    },
-  ];
+  {
+    title: "GitHub Stats",
+    url: "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Shreyans-704&theme=github_dark",
+  },
+  {
+    title: "Contribution Streak",
+    url: "https://streak-stats.demolab.com?user=Shreyans-704&theme=tokyonight&hide_border=true",
+  },
+  {
+    title: "Top Languages",
+    url: "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Shreyans-704&theme=github_dark",
+  },
+];
 
   return (
     <section className="w-full relative border-t border-white/5 bg-[#0b0f14] min-h-screen overflow-hidden">
