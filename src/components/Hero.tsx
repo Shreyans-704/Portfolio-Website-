@@ -102,7 +102,7 @@ export default function Hero() {
           <span className="flex flex-col items-center gap-1 sm:hidden text-[0.65rem] font-medium text-gray-300 uppercase tracking-[0.1em]">
             <span>B.Tech IT @ NIT Jalandhar</span>
             <span>Ex-Intern @ Engineers India Limited</span>
-            <span>Incoming Intern @ Conscendo Technologies</span>
+            <span>Ex - Salesforce Intern @ Conscendo Technologies</span>
           </span>
           <span className="hidden sm:inline text-xs md:text-sm font-medium text-gray-300 uppercase tracking-[0.15em] md:tracking-[0.2em]">
             B.Tech IT @ NIT Jalandhar <span className="mx-2 opacity-30">|</span> Ex-Intern @ Engineers India Limited <span className="mx-2 opacity-30">|</span> Incoming Intern @ Conscendo Technologies
