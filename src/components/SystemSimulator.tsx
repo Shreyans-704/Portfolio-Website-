@@ -234,7 +234,7 @@ export default function SystemSimulator() {
   };
 
   return (
-    <section className="w-full py-24 md:py-32 relative border-t border-white/5 bg-[#080b10]">
+    <section className="w-full py-16 md:py-24 lg:py-32 relative border-t border-white/5 bg-[#080b10]">
       {/* Ambient glow based on status */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
@@ -243,26 +243,26 @@ export default function SystemSimulator() {
         style={{ background: `radial-gradient(ellipse at center, ${statusColor[metrics.status]}, transparent 70%)` }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6"
+          className="mb-8 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
           <div>
-            <p className="text-blue-400 text-xs font-bold tracking-[0.25em] uppercase mb-3">Live Simulation</p>
-            <h3 className="text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
+            <p className="text-blue-400 text-xs font-bold tracking-[0.25em] uppercase mb-2 sm:mb-3">Live Simulation</p>
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
               See How I Build<br />
               <span className="text-gray-500">Systems</span>
             </h3>
-            <p className="text-gray-400 mt-4 font-light max-w-lg leading-relaxed">
+            <p className="text-gray-400 mt-3 md:mt-4 text-sm sm:text-base font-light max-w-lg leading-relaxed">
               Interact with a simplified simulation of real-time, scalable architecture. Trigger real engineering scenarios.
             </p>
           </div>
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-3 shrink-0 self-start md:self-auto">
             <span className="text-xs text-gray-600 font-mono uppercase tracking-widest">System Status</span>
             <StatusBadge status={metrics.status} />
           </div>
@@ -288,29 +288,29 @@ export default function SystemSimulator() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
         >
           {/* Control Panel */}
-          <div className="bg-[#0d1117] border border-white/[0.07] rounded-2xl p-6">
-            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-5">Control Panel</p>
-            <div className="grid grid-cols-2 gap-3">
+          <div className="bg-[#0d1117] border border-white/[0.07] rounded-2xl p-4 sm:p-6">
+            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-4 sm:mb-5">Control Panel</p>
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               {buttons.map((btn) => (
                 <motion.button
                   key={btn.label}
                   onClick={btn.fn}
                   whileTap={{ scale: 0.95 }}
                   whileHover={{ scale: 1.02 }}
-                  className={`flex flex-col items-start gap-2 p-4 rounded-xl border transition-all duration-200 text-left ${btn.border}`}
+                  className={`flex flex-col items-start gap-1.5 sm:gap-2 p-3 sm:p-4 rounded-xl border transition-all duration-200 text-left ${btn.border}`}
                 >
-                  <span className="text-xl" style={{ color: btn.color }}>{btn.icon}</span>
-                  <span className="text-sm font-semibold text-white leading-tight">{btn.label}</span>
+                  <span className="text-lg sm:text-xl" style={{ color: btn.color }}>{btn.icon}</span>
+                  <span className="text-xs sm:text-sm font-semibold text-white leading-tight">{btn.label}</span>
                 </motion.button>
               ))}
             </div>
           </div>
 
           {/* System Log */}
-          <div className="bg-[#0d1117] border border-white/[0.07] rounded-2xl p-6">
+          <div className="bg-[#0d1117] border border-white/[0.07] rounded-2xl p-4 sm:p-6">
             <div className="flex items-center justify-between mb-4">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500">System Log</p>
               <span className="text-[10px] font-mono text-gray-600 bg-white/5 px-2 py-1 rounded-md">LIVE</span>

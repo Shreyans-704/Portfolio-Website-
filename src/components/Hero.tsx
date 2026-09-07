@@ -17,7 +17,8 @@ export default function Hero() {
   const nameScale = useTransform(scrollY, [0, 400], [1, 1.05]);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 overflow-hidden">
+    // hero-section-svh applies min-height: 100svh via mobile.css as the progressive enhancement
+    <section className="hero-section-svh relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-28 sm:pt-6 sm:pb-6 overflow-hidden">
 
       {/* Background Soft Radial Glows & Particles (z-0) */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -61,18 +62,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="relative mb-10 md:mb-16 w-full"
+          className="relative mb-6 md:mb-10 lg:mb-16 w-full"
         >
           {/* Parallax Wrapper */}
           <motion.div style={{ y: nameY, scale: nameScale }} className="relative">
             {/* Primary High-Fidelity 3D Texture Text */}
-            <h1 className="relative z-20 text-[clamp(2.5rem,10vw,8rem)] font-bold tracking-tighter m-0 leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gray-600 drop-shadow-[0_15px_30px_rgba(255,255,255,0.1)]">
+            <h1 className="relative z-20 text-[clamp(2.4rem,11vw,8rem)] font-bold tracking-tighter m-0 leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gray-600 drop-shadow-[0_15px_30px_rgba(255,255,255,0.1)]">
               Shreyans Jaiswal
             </h1>
 
             {/* Depth Illusion Layer (Shadow behind text) */}
             <h1
-              className="absolute top-[3px] left-0 right-0 mx-auto text-center z-10 text-[clamp(2.5rem,10vw,8rem)] font-bold tracking-tighter m-0 leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-blue-500/20 to-transparent blur-[8px] pointer-events-none"
+              className="absolute top-[3px] left-0 right-0 mx-auto text-center z-10 text-[clamp(2.4rem,11vw,8rem)] font-bold tracking-tighter m-0 leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-blue-500/20 to-transparent blur-[8px] pointer-events-none"
               aria-hidden="true"
             >
               Shreyans Jaiswal
@@ -85,19 +86,27 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="text-xl md:text-3xl font-light text-gray-200 tracking-tight leading-relaxed max-w-3xl m-0 mb-6 px-4 md:px-0"
+          className="text-base sm:text-xl md:text-3xl font-light text-gray-200 tracking-tight leading-relaxed max-w-3xl m-0 mb-5 md:mb-6 px-2 md:px-0"
         >
           Building real-time systems, AI applications, and production-grade web platforms.
         </motion.h2>
 
-        {/* Subtext */}
+        {/* Subtext — metadata row */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.7 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-[0.6rem] sm:text-xs md:text-sm font-medium text-gray-300 uppercase tracking-[0.1em] md:tracking-[0.2em] m-0 mb-10 text-balance px-4"
+          className="m-0 mb-0 px-4 text-balance"
         >
-          B.Tech IT @ NIT Jalandhar <span className="mx-2 opacity-30">|</span> Ex-Intern @ Engineers India Limited <span className="mx-2 opacity-30">|</span> Incoming Intern @ Conscendo Technologies
+          {/* On mobile: stacked vertically. On sm+: inline with pipes */}
+          <span className="flex flex-col items-center gap-1 sm:hidden text-[0.65rem] font-medium text-gray-300 uppercase tracking-[0.1em]">
+            <span>B.Tech IT @ NIT Jalandhar</span>
+            <span>Ex-Intern @ Engineers India Limited</span>
+            <span>Incoming Intern @ Conscendo Technologies</span>
+          </span>
+          <span className="hidden sm:inline text-xs md:text-sm font-medium text-gray-300 uppercase tracking-[0.15em] md:tracking-[0.2em]">
+            B.Tech IT @ NIT Jalandhar <span className="mx-2 opacity-30">|</span> Ex-Intern @ Engineers India Limited <span className="mx-2 opacity-30">|</span> Incoming Intern @ Conscendo Technologies
+          </span>
         </motion.p>
 
       </div>

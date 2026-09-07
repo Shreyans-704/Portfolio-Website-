@@ -379,14 +379,14 @@ export default function Projects() {
     <section className="w-full relative border-t border-white/5 bg-[#0B0F14] min-h-screen">
       <MarqueeStrip words={["SHIP IT", "BUILD IN PUBLIC", "PRODUCTION GRADE", "PROBLEM SOLVER", "CODE WITH PURPOSE", "REAL-WORLD IMPACT", "LAUNCH. ITERATE. GROW."]} />
       
-      <div className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="py-16 md:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           
-          <div className="mb-20">
-            <h3 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 text-white">
+          <div className="mb-12 md:mb-20">
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter mb-3 md:mb-4 text-white">
               Projects
             </h3>
-            <p className="text-lg text-gray-400 font-light max-w-xl leading-relaxed">
+            <p className="text-base md:text-lg text-gray-400 font-light max-w-xl leading-relaxed">
               Production-grade systems ranging from real-time synchronization pipelines to complex RAG inference engines.
             </p>
           </div>
@@ -404,13 +404,13 @@ export default function Projects() {
                 className="w-full flex flex-col lg:flex-row gap-0 rounded-[2rem] bg-[#0B0F14] border border-white/[0.08] shadow-[0_4px_40px_rgba(0,0,0,0.4)] overflow-hidden cursor-pointer group hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_80px_rgba(59,130,246,0.1)]"
               >
                 {/* LEFT COLUMN (45%) */}
-                <div className="lg:w-[45%] relative p-6 lg:p-8 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-gray-900/40 to-[#0B0F14] min-h-[200px] lg:min-h-[250px]">
-                  <div className="absolute top-6 right-6 z-20">
+                <div className="lg:w-[45%] relative p-5 sm:p-6 lg:p-8 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-gray-900/40 to-[#0B0F14] min-h-[180px] sm:min-h-[200px] lg:min-h-[250px]">
+                  <div className="absolute top-5 right-5 sm:top-6 sm:right-6 z-20">
                     <span className="text-xs font-bold tracking-widest uppercase text-cyan-400">{p.status}</span>
                   </div>
                   
-                  <div className="relative w-full mt-6 mb-8 lg:mt-8 lg:mb-10 z-10 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                     <motion.img layoutId={`image-${p.id}`} src={p.image} alt={p.title} className="w-full h-auto object-contain max-w-[85%]" />
+                  <div className="relative w-full mt-5 mb-5 sm:mt-6 sm:mb-6 lg:mt-8 lg:mb-10 z-10 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                     <motion.img layoutId={`image-${p.id}`} src={p.image} alt={p.title} className="w-full h-auto object-contain max-w-[80%] sm:max-w-[85%]" />
                   </div>
 
                   <div className="relative z-20 mt-auto">
@@ -423,24 +423,24 @@ export default function Projects() {
                 </div>
 
                 {/* RIGHT COLUMN (55%) */}
-                <div className="lg:w-[55%] p-6 lg:p-8 flex flex-col border-t lg:border-t-0 lg:border-l border-white/[0.05]">
-                  <motion.h3 layoutId={`title-${p.id}`} className="text-2xl md:text-3xl font-bold text-white mb-2">
+                <div className="lg:w-[55%] p-5 sm:p-6 lg:p-8 flex flex-col border-t lg:border-t-0 lg:border-l border-white/[0.05]">
+                  <motion.h3 layoutId={`title-${p.id}`} className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
                     {p.title}
                   </motion.h3>
-                  <motion.p layoutId={`desc-${p.id}`} className="text-gray-400 text-base leading-relaxed mb-6">
+                  <motion.p layoutId={`desc-${p.id}`} className="text-gray-400 text-sm sm:text-base leading-relaxed mb-4 md:mb-6">
                     {p.shortDesc}
                   </motion.p>
 
-                  <div className="mb-6 flex-1">
+                  <div className="mb-4 md:mb-6 flex-1">
                     <ul className="space-y-2">
                       {p.features.slice(0, 5).map((feature, idx) => (
-                         <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm md:text-base">
+                         <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm">
                            <span className="text-gray-500 mt-1 shrink-0 text-[10px]">●</span>
                            <span className="leading-relaxed">{feature}</span>
                          </li>
                       ))}
                       {p.features.length > 5 && (
-                         <li className="flex items-start gap-2 text-gray-500 text-xs md:text-sm mt-3">
+                         <li className="flex items-start gap-2 text-gray-500 text-xs mt-2 md:mt-3">
                            <span className="mt-1 shrink-0 text-[10px] invisible">●</span>
                            <span>+{p.features.length - 5} more features</span>
                          </li>
@@ -448,21 +448,23 @@ export default function Projects() {
                     </ul>
                   </div>
 
-                  <div className="mt-auto flex flex-wrap gap-2 pt-6 relative items-center">
+                  {/* Tech badges + arrow — arrow is a flex sibling so it never overlaps badges */}
+                  <div className="mt-auto flex flex-wrap gap-2 pt-4 sm:pt-6 items-end">
                     {p.tech.slice(0, 6).map(tech => (
-                       <div key={tech} className="px-4 py-2 rounded-full border border-white/10 bg-[#121820] flex items-center gap-2 text-xs font-medium text-gray-300 group-hover:bg-white/[0.05] group-hover:border-white/20 transition-colors">
+                       <div key={tech} className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-[#121820] flex items-center gap-1.5 sm:gap-2 text-xs font-medium text-gray-300 group-hover:bg-white/[0.05] group-hover:border-white/20 transition-colors">
                           <TechIcon name={tech} />
                           <span>{tech}</span>
                        </div>
                     ))}
                     {p.tech.length > 6 && (
-                       <div className="px-4 py-2 rounded-full border border-white/10 bg-[#121820] flex items-center justify-center text-xs font-medium text-gray-500 group-hover:bg-white/[0.05] group-hover:border-white/20 transition-colors">
+                       <div className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-[#121820] flex items-center justify-center text-xs font-medium text-gray-500 group-hover:bg-white/[0.05] group-hover:border-white/20 transition-colors">
                           +{p.tech.length - 6}
                        </div>
                     )}
 
-                    <div className="absolute right-0 bottom-0 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 group-hover:bg-white/10 transition-all bg-[#121820] z-20">
-                       <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:-rotate-45 transition-all duration-300" />
+                    {/* Arrow: ml-auto pushes it right, flex-shrink-0 prevents squeeze */}
+                    <div className="ml-auto flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/30 group-hover:bg-white/10 transition-all bg-[#121820]">
+                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white group-hover:-rotate-45 transition-all duration-300" />
                     </div>
                   </div>
                 </div>
@@ -480,7 +482,7 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedId(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12 bg-black/60 backdrop-blur-sm text-white"
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-12 bg-black/60 backdrop-blur-sm text-white"
           >
              {projectsData.map(p => p.id === selectedId && (
                <motion.div 
@@ -488,7 +490,7 @@ export default function Projects() {
                  layoutId={`card-${p.id}`} 
                  transition={springTransition} 
                  onClick={(e) => e.stopPropagation()}
-                 className="bg-[#0B0F14] border border-white/10 shadow-2xl relative w-full max-w-5xl rounded-[2rem] flex flex-col max-h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                 className="bg-[#0B0F14] border border-white/10 shadow-2xl relative w-full max-w-5xl rounded-3xl sm:rounded-[2rem] flex flex-col max-h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                >
                   
                   {/* Close Button */}
@@ -499,30 +501,29 @@ export default function Projects() {
                   </div>
 
                   {/* Hero Banner */}
-                  <div className="w-full flex flex-col items-center pt-16 pb-12 px-6 lg:px-8 relative border-b border-white/10 bg-gradient-to-b from-gray-900/40 to-[#0B0F14]">
+                  <div className="w-full flex flex-col items-center pt-14 sm:pt-16 pb-10 sm:pb-12 px-4 sm:px-6 lg:px-8 relative border-b border-white/10 bg-gradient-to-b from-gray-900/40 to-[#0B0F14]">
                      <div className="absolute top-6 left-6 z-20 hidden md:block">
                         <span className="text-xs font-bold tracking-widest uppercase text-cyan-400">{p.status}</span>
                      </div>
                      
-                     <div className="relative w-full mt-8 mb-8 z-10 flex items-center justify-center">
+                     <div className="relative w-full mt-6 mb-6 sm:mt-8 sm:mb-8 z-10 flex items-center justify-center">
                         <motion.img layoutId={`image-${p.id}`} src={p.image} alt={p.title} className="w-full h-auto object-contain drop-shadow-2xl max-w-[90%] md:max-w-[80%]" />
                      </div>
-                     
-                     <motion.h1 layoutId={`title-${p.id}`} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-center mb-4">
-                       {p.title}
-                     </motion.h1>
-                     <motion.h4 layoutId={`tagline-${p.id}`} className="text-lg md:text-xl font-light text-gray-400 text-center max-w-2xl">
-                       {p.tagline}
-                     </motion.h4>
+                     <motion.h1 layoutId={`title-${p.id}`} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center mb-3 md:mb-4 px-2">
+                        {p.title}
+                      </motion.h1>
+                      <motion.h4 layoutId={`tagline-${p.id}`} className="text-base md:text-lg font-light text-gray-400 text-center max-w-2xl px-2">
+                        {p.tagline}
+                      </motion.h4>
                   </div>
 
                   {/* Content Body */}
-                  <div className="w-full max-w-5xl mx-auto px-6 lg:px-8 py-12 flex flex-col gap-12">
+                  <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 sm:gap-12">
                      
                      {/* Tech Stack Pills (All) */}
                      <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
                        {p.tech.map(tech => (
-                         <div key={tech} className="px-4 py-2 rounded-full border border-white/10 bg-[#121820] flex items-center gap-2 text-xs md:text-sm text-gray-300">
+                         <div key={tech} className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-[#121820] flex items-center gap-2 text-xs md:text-sm text-gray-300">
                             <TechIcon name={tech} />
                             <span className="font-medium tracking-wide">{tech}</span>
                          </div>
@@ -531,28 +532,28 @@ export default function Projects() {
 
                      {/* Overview */}
                      <div className="prose prose-invert max-w-none text-center md:text-left">
-                       <p className="text-lg md:text-xl leading-relaxed font-light text-gray-300">
+                       <p className="text-base sm:text-lg md:text-xl leading-relaxed font-light text-gray-300">
                          {p.overview}
                        </p>
                      </div>
 
                      {/* Detail Grid */}
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 border-t border-white/10 pt-12">
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 border-t border-white/10 pt-8 sm:pt-12">
                         {/* Left Column */}
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-8 sm:gap-10">
                            <section>
-                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">Problem</h3>
-                             <p className="text-gray-300 text-base leading-relaxed">{p.problem}</p>
+                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-3 sm:mb-4">Problem</h3>
+                             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{p.problem}</p>
                            </section>
                            <section>
-                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">Architecture</h3>
-                             <p className="text-gray-300 text-base leading-relaxed">{p.architecture}</p>
+                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-3 sm:mb-4">Architecture</h3>
+                             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{p.architecture}</p>
                            </section>
                            <section>
-                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">Key Features</h3>
+                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-3 sm:mb-4">Key Features</h3>
                              <ul className="space-y-3">
                                {p.features.map((feature, idx) => (
-                                 <li key={idx} className="flex items-start gap-3 text-gray-300 text-base">
+                                 <li key={idx} className="flex items-start gap-3 text-gray-300 text-sm sm:text-base">
                                    <div className="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center shrink-0 mt-0.5 border border-white/10">
                                      <CheckCircle2 className="w-3 h-3 text-white" />
                                    </div>
@@ -564,22 +565,22 @@ export default function Projects() {
                         </div>
                         
                         {/* Right Column */}
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-8 sm:gap-10">
                            <section>
-                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">Solution</h3>
-                             <p className="text-gray-300 text-base leading-relaxed">{p.solution}</p>
+                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-3 sm:mb-4">Solution</h3>
+                             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{p.solution}</p>
                            </section>
                            <section>
-                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">Challenges</h3>
-                             <p className="text-gray-300 text-base leading-relaxed">{p.challenges}</p>
+                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-3 sm:mb-4">Challenges</h3>
+                             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{p.challenges}</p>
                            </section>
                            <section>
-                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-4">Metrics</h3>
+                             <h3 className="text-xs font-bold tracking-widest text-gray-500 uppercase mb-3 sm:mb-4">Metrics</h3>
                              <div className="grid grid-cols-2 gap-3">
                                 {p.metricsList.map((m, idx) => (
-                                  <div key={idx} className="p-4 rounded-xl bg-[#121820] border border-white/5 flex flex-col gap-2">
-                                     <span className="text-2xl">{m.icon}</span>
-                                     <span className="text-xl font-bold text-white mt-1">{m.value}</span>
+                                  <div key={idx} className="p-3.5 sm:p-4 rounded-xl bg-[#121820] border border-white/5 flex flex-col gap-1.5 sm:gap-2">
+                                     <span className="text-xl sm:text-2xl">{m.icon}</span>
+                                     <span className="text-lg sm:text-xl font-bold text-white mt-1">{m.value}</span>
                                      <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">{m.label}</span>
                                   </div>
                                 ))}
@@ -589,14 +590,14 @@ export default function Projects() {
                      </div>
                      
                      {/* Bottom Buttons */}
-                     <div className="flex flex-col sm:flex-row items-center gap-6 pt-16 pb-32 border-t border-white/10 mt-8">
+                     <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-10 sm:pt-16 pb-16 sm:pb-24 border-t border-white/10 mt-4 sm:mt-8">
                        {p.liveUrl && (
-                         <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 w-full sm:w-auto rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors text-lg">
+                         <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 w-full sm:w-auto rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors text-base sm:text-lg">
                             <Globe className="w-5 h-5" />
                             View Live Site
                          </a>
                        )}
-                       <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-8 py-4 w-full sm:w-auto rounded-full bg-[#121820] border border-white/10 text-white font-semibold hover:bg-white/10 transition-colors text-lg">
+                       <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 w-full sm:w-auto rounded-full bg-[#121820] border border-white/10 text-white font-semibold hover:bg-white/10 transition-colors text-base sm:text-lg">
                           <FaGithub className="w-5 h-5" />
                           View Source Code
                        </a>

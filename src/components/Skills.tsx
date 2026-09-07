@@ -36,8 +36,8 @@ export default function Skills() {
   return (
     <section className="w-full relative border-t border-white/5">
       <MarqueeStrip words={["FULL-STACK", "AI ENGINEERING", "CLOUD NATIVE", "PERFORMANCE FIRST", "SYSTEM DESIGN", "ALWAYS SHIPPING", "DEVELOPER TOOLING"]} />
-      <div className="py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="py-16 md:py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         <div className="mb-16">
           <h3 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">
@@ -56,7 +56,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group flex flex-col p-8 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-md hover:bg-white/[0.04] transition-colors duration-300 h-full"
+              className="group flex flex-col p-6 sm:p-8 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-md hover:bg-white/[0.04] transition-colors duration-300 h-full"
             >
               <div className="flex items-center gap-4 mb-8">
                  <div className="w-12 h-12 rounded-2xl bg-[#0b0f14] flex items-center justify-center border border-white/10 group-hover:border-blue-500/30 group-hover:text-blue-400 text-gray-400 transition-colors duration-300 shadow-inner">

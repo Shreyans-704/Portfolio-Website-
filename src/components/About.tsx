@@ -17,8 +17,8 @@ export default function About() {
   return (
     <section ref={container} className="w-full relative border-t border-white/5 overflow-hidden">
       <MarqueeStrip words={["CURIOUS MIND", "CLEAN CODE", "PURPOSEFUL DESIGN", "SYSTEMS THINKER", "ALWAYS LEARNING", "HUMAN-CENTERED", "SCALABLE BY DEFAULT"]} />
-      <div className="py-24 md:py-40 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="py-16 md:py-32 lg:py-40 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           
           {/* Left Text Side */}
@@ -27,14 +27,14 @@ export default function About() {
               About Me
             </h3>
             
-            <p className="text-xl md:text-2xl text-gray-300 font-light leading-[1.8] tracking-normal">
-              I’m an IT undergraduate at <span className="text-white font-medium">NIT Jalandhar</span>, focused on building scalable digital systems that combine performance, security, and clean design.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light leading-[1.8] tracking-normal">
+              I'm an IT undergraduate at <span className="text-white font-medium">NIT Jalandhar</span>, focused on building scalable digital systems that combine performance, security, and clean design.
             </p>
-            <p className="text-lg md:text-xl text-gray-400 font-light leading-[1.8] tracking-normal">
-              Currently, I’m gaining real-world experience through internships at <span className="text-white font-medium">Engineers India Limited (EIL)</span> and <span className="text-white font-medium">Conscendo Technologies</span> (a Salesforce Summit Partner), where I work on practical, enterprise-level solutions and modern development workflows.
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 font-light leading-[1.8] tracking-normal">
+              Currently, I'm gaining real-world experience through internships at <span className="text-white font-medium">Engineers India Limited (EIL)</span> and <span className="text-white font-medium">Conscendo Technologies</span> (a Salesforce Summit Partner), where I work on practical, enterprise-level solutions and modern development workflows.
             </p>
-            <p className="text-lg md:text-xl text-gray-400 font-light leading-[1.8] tracking-normal">
-              My approach to engineering is simple — build systems that are fast, reliable, and actually useful. Whether it’s developing backend services, working with cloud platforms, or crafting responsive user interfaces, I focus on creating solutions that are both efficient and user-centric.
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 font-light leading-[1.8] tracking-normal">
+              My approach to engineering is simple — build systems that are fast, reliable, and actually useful. Whether it's developing backend services, working with cloud platforms, or crafting responsive user interfaces, I focus on creating solutions that are both efficient and user-centric.
             </p>
             
             <div className="pt-6 border-t border-white/10 mt-8">

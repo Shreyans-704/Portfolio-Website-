@@ -62,7 +62,7 @@ export default function PortfolioAssistant() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+    <div className="chat-float-wrapper fixed bottom-4 right-4 z-[100] flex flex-col items-end">
       {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
@@ -70,7 +70,7 @@ export default function PortfolioAssistant() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="mb-4 w-[90vw] sm:w-[400px] h-[500px] bg-[#0b0f14]/90 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+            className="chat-window mb-4 w-[90vw] sm:w-[400px] h-[500px] bg-[#0b0f14]/90 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="p-4 border-b border-white/5 bg-white/5 flex items-center justify-between">

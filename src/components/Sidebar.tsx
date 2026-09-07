@@ -61,12 +61,7 @@ export default function Sidebar() {
 
   const close = useCallback(() => setIsOpen(false), []);
 
-  // Open by default on desktop
-  useEffect(() => {
-    if (window.innerWidth >= 1024) {
-      setIsOpen(true);
-    }
-  }, []);
+  // Sidebar starts closed by default across all devices
 
   // Active-section tracking via IntersectionObserver
   useEffect(() => {
@@ -124,10 +119,10 @@ export default function Sidebar() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Navigate then close on mobile/tablet
+  // Navigate then close
   const handleNavClick = (id: string) => {
     scrollToSection(id);
-    if (window.innerWidth < 1024) close();
+    close();
   };
 
   return (
@@ -136,7 +131,7 @@ export default function Sidebar() {
       <button
         ref={toggleBtnRef}
         onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed top-6 left-6 z-[60] p-2.5 rounded-xl bg-[#070708]/80 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-200 shadow-lg"
+        className="hamburger-safe fixed top-4 left-4 z-[60] p-3 rounded-xl bg-[#070708]/80 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-200 shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center"
         aria-label="Toggle sidebar"
         aria-expanded={isOpen}
         aria-controls="main-sidebar"
@@ -144,7 +139,7 @@ export default function Sidebar() {
         <HamburgerIcon isOpen={isOpen} />
       </button>
 
-      {/* Backdrop overlay — mobile/tablet only, closes sidebar on tap */}
+      {/* Backdrop overlay — closes sidebar on tap/click */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -153,7 +148,7 @@ export default function Sidebar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[2px] lg:hidden"
+            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[2px]"
             aria-hidden="true"
             onMouseDown={close}
             onTouchStart={close}

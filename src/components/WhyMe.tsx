@@ -39,15 +39,15 @@ export default function WhyMe() {
       {/* Top marquee — left to right */}
       <MarqueeStrip reverse={false} />
 
-      <div className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+      <div className="py-16 md:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-24 items-start">
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/3 w-full sticky top-32"
+            className="why-me-heading lg:w-1/3 w-full lg:sticky lg:top-32"
           >
             <h3 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-tight">
               Why <br /><span className="text-gray-500">Me?</span>

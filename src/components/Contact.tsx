@@ -5,7 +5,7 @@ import { Mail, Link, GitBranch, Download, Code2 } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="w-full py-32 md:py-48 relative flex flex-col items-center justify-center text-center border-t border-white/5 overflow-hidden">
+    <section className="w-full py-20 md:py-40 lg:py-48 relative flex flex-col items-center justify-center text-center border-t border-white/5 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -16,7 +16,7 @@ export default function Contact() {
         <h3 className="text-[clamp(1.75rem,8vw,4.5rem)] font-bold tracking-tighter mb-6 leading-[1.1] text-white drop-shadow-xl px-4 md:px-0">
           Let's build something impactful.
         </h3>
-        <p className="text-lg md:text-xl text-gray-400 mb-16 font-light max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-gray-400 mb-10 md:mb-16 font-light max-w-2xl mx-auto leading-relaxed px-2">
           Open to internships, Backend/DevOps/AI/Software roles, and high-impact collaborations.
         </p>
 

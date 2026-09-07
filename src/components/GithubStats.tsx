@@ -20,13 +20,13 @@ export default function GithubStats() {
 ];
 
   return (
-    <section className="w-full relative border-t border-white/5 bg-[#0b0f14] min-h-screen overflow-hidden">
+    <section className="w-full relative border-t border-white/5 bg-[#0b0f14] overflow-hidden">
       <MarqueeStrip
         words={["COMMIT", "PUSH", "STREAK", "OPEN SOURCE", "CONTRIBUTION", "CODE QUALITY", "GIT FLOW", "MERGE"]}
       />
 
-      <div className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="py-16 md:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
           <div className="mb-16 text-center md:text-left">
             <motion.h3

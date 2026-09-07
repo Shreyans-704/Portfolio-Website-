@@ -94,14 +94,14 @@ export default function Achievements() {
   return (
     <section className="w-full relative border-t border-white/5">
       <MarqueeStrip words={["VERIFIED SKILLS", "LIFELONG LEARNER", "CERTIFIED", "KEEP GROWING", "KNOWLEDGE IS POWER", "EARNED NOT GIVEN", "STAY CURIOUS"]} />
-      <div className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="py-16 md:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
-          <div className="mb-16">
-            <h3 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">
+          <div className="mb-12 md:mb-16">
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter mb-3 md:mb-4">
               Achievements <span className="text-gray-500">&amp; Certifications</span>
             </h3>
-            <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-gray-400 font-light max-w-2xl leading-relaxed mb-6 md:mb-8">
               Verified credentials and measurable production achievements defining my development standard.
             </p>
 
@@ -135,7 +135,7 @@ export default function Achievements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group flex flex-col p-8 rounded-[2rem] bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] transition-colors duration-300 h-full"
+              className="group flex flex-col p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] transition-colors duration-300 h-full"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>

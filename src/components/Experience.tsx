@@ -44,7 +44,7 @@ export default function Experience() {
   return (
     <section className="w-full border-t border-white/5">
       <MarqueeStrip words={["ENTERPRISE ENGINEERING", "PRODUCTION READY", "REAL-WORLD IMPACT", "END-TO-END OWNERSHIP"]} />
-      <div className="py-24 md:py-32 max-w-4xl mx-auto px-6">
+      <div className="py-16 md:py-24 lg:py-32 max-w-4xl mx-auto px-4 sm:px-6">
         <div className="mb-16">
           <h3 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">
             Professional <span className="text-gray-500">Experience</span>
