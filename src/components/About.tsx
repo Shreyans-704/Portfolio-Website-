@@ -23,9 +23,9 @@ export default function About() {
           
           {/* Left Text Side */}
           <div className="lg:w-1/2 basis-1/2 space-y-8 relative">
-            <h3 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
               About Me
-            </h3>
+            </h2>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light leading-[1.8] tracking-normal">
               I'm an IT undergraduate at <span className="text-white font-medium">NIT Jalandhar</span>, focused on building scalable digital systems that combine performance, security, and clean design.
@@ -38,7 +38,7 @@ export default function About() {
             </p>
             
             <div className="pt-6 border-t border-white/10 mt-8">
-              <h4 className="text-white font-medium uppercase tracking-widest text-sm mb-4">Interests & Domains</h4>
+              <h3 className="text-white font-medium uppercase tracking-widest text-sm mb-4">Interests & Domains</h3>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 {["AI Systems","Backend Engineering","Real-Time Systems","Cloud & DevOps","RAG & LLM Applications","Full-Stack Web Development","Performance Optimization"].map(interest => (
                   <span key={interest} className="px-3 sm:px-4 py-2 rounded-full border border-white/10 bg-white/5 text-gray-300 text-xs sm:text-sm font-medium hover:bg-white/10 transition-colors cursor-default backdrop-blur-md">

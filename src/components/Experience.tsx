@@ -46,9 +46,9 @@ export default function Experience() {
       <MarqueeStrip words={["ENTERPRISE ENGINEERING", "PRODUCTION READY", "REAL-WORLD IMPACT", "END-TO-END OWNERSHIP"]} />
       <div className="py-16 md:py-24 lg:py-32 max-w-4xl mx-auto px-4 sm:px-6">
         <div className="mb-16">
-          <h3 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">
             Professional <span className="text-gray-500">Experience</span>
-          </h3>
+          </h2>
           <p className="text-lg text-gray-400 max-w-2xl">
             Building production software across enterprise automation and full-stack engineering.
           </p>
@@ -70,7 +70,7 @@ export default function Experience() {
               <div className="bg-white/[0.02] border border-white/5 rounded-[2rem] p-6 sm:p-8 hover:bg-white/[0.04] transition-colors">
                 <div className="flex flex-col md:flex-row justify-between gap-3 mb-5">
                   <div>
-                    <h4 className="text-2xl font-bold">{exp.role}</h4>
+                    <h3 className="text-2xl font-bold">{exp.role}</h3>
                     <a href={exp.companyLink} target="_blank" rel="noopener noreferrer"
                       className="text-blue-400 text-lg hover:text-blue-300">
                       {exp.company} ↗

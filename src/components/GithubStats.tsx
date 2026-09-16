@@ -29,7 +29,7 @@ export default function GithubStats() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
           <div className="mb-16 text-center md:text-left">
-            <motion.h3
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -37,7 +37,7 @@ export default function GithubStats() {
               className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 text-white"
             >
               GitHub <span className="text-gray-500">Activity</span>
-            </motion.h3>
+            </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

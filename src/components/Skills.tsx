@@ -40,9 +40,9 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         <div className="mb-16">
-          <h3 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4">
             Core <span className="text-gray-500">Expertise</span>
-          </h3>
+          </h2>
           <p className="text-lg text-gray-400 font-light max-w-2xl leading-relaxed">
             The core architecture and tools I use to take applications from zero to global scale.
           </p>
@@ -62,7 +62,7 @@ export default function Skills() {
                  <div className="w-12 h-12 rounded-2xl bg-[#0b0f14] flex items-center justify-center border border-white/10 group-hover:border-blue-500/30 group-hover:text-blue-400 text-gray-400 transition-colors duration-300 shadow-inner">
                   {category.icon}
                 </div>
-                <h4 className="text-lg font-bold tracking-tight text-white">{category.title}</h4>
+                <h3 className="text-lg font-bold tracking-tight text-white">{category.title}</h3>
               </div>
               
               <div className="flex flex-wrap gap-2 mt-auto">

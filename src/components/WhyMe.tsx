@@ -49,9 +49,9 @@ export default function WhyMe() {
             transition={{ duration: 0.8 }}
             className="why-me-heading lg:w-1/3 w-full lg:sticky lg:top-32"
           >
-            <h3 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-tight">
               Why <br /><span className="text-gray-500">Me?</span>
-            </h3>
+            </h2>
           </motion.div>
 
           <div className="lg:w-2/3 w-full grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
@@ -64,7 +64,7 @@ export default function WhyMe() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="flex flex-col"
               >
-                <h4 className="text-xl font-bold tracking-tight mb-3 text-white">{p.title}</h4>
+                <h3 className="text-xl font-bold tracking-tight mb-3 text-white">{p.title}</h3>
                 <p className="text-base text-gray-400 leading-[1.6] font-light">{p.desc}</p>
               </motion.div>
             ))}

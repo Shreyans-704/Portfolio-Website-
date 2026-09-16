@@ -98,9 +98,9 @@ export default function Achievements() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
           <div className="mb-12 md:mb-16">
-            <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter mb-3 md:mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter mb-3 md:mb-4">
               Achievements <span className="text-gray-500">&amp; Certifications</span>
-            </h3>
+            </h2>
             <p className="text-base md:text-lg text-gray-400 font-light max-w-2xl leading-relaxed mb-6 md:mb-8">
               Verified credentials and measurable production achievements defining my development standard.
             </p>
@@ -139,9 +139,9 @@ export default function Achievements() {
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h4 className="text-xl font-bold tracking-tight text-white mb-2 leading-tight pr-4">
+                    <h3 className="text-xl font-bold tracking-tight text-white mb-2 leading-tight pr-4">
                       {cert.title}
-                    </h4>
+                    </h3>
                     <div className="flex items-center gap-2 text-sm text-gray-400 font-medium">
                       <span className="text-blue-400">{cert.issuer}</span>
                       {cert.date && (

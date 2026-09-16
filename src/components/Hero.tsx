@@ -72,12 +72,12 @@ export default function Hero() {
             </h1>
 
             {/* Depth Illusion Layer (Shadow behind text) */}
-            <h1
+            <span
               className="absolute top-[3px] left-0 right-0 mx-auto text-center z-10 text-[clamp(2.4rem,11vw,8rem)] font-bold tracking-tighter m-0 leading-[1.05] text-transparent bg-clip-text bg-gradient-to-b from-blue-500/20 to-transparent blur-[8px] pointer-events-none"
               aria-hidden="true"
             >
               Shreyans Jaiswal
-            </h1>
+            </span>
           </motion.div>
         </motion.div>
 
