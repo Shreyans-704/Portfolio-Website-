@@ -5,7 +5,7 @@ import { Mail, Link, GitBranch, Download, Code2 } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="w-full py-20 md:py-40 lg:py-48 relative flex flex-col items-center justify-center text-center border-t border-white/5 overflow-hidden">
+    <section className="w-full pt-24 pb-36 md:py-40 lg:py-48 relative flex flex-col items-center justify-center text-center border-t border-white/5 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ export default function Contact() {
       </div>
 
       {/* Infinite Scrolling Marquee - Bottom */}
-      <div className="absolute bottom-10 left-0 w-full overflow-hidden flex whitespace-nowrap opacity-[0.25] pointer-events-none z-10 mix-blend-screen">
+      <div className="absolute bottom-8 md:bottom-10 left-0 w-full overflow-hidden flex whitespace-nowrap opacity-[0.25] pointer-events-none z-10 mix-blend-screen">
         <motion.div
           className="flex gap-16 text-5xl md:text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500"
           animate={{ x: [0, -1000] }}

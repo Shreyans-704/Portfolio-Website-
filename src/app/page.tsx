@@ -26,7 +26,7 @@ export default function Home() {
         <div id="why-me"><WhyMe /></div>
         <div id="contact"><Contact /></div>
       
-      <footer className="w-full py-8 border-t border-white/5 flex items-center justify-center px-6 bg-[#070708]">
+      <footer className="w-full py-8 border-t border-white/5 flex items-center justify-center px-6 bg-[#070708] relative z-10">
         <p className="text-gray-600 text-xs font-medium tracking-widest uppercase text-center">
           © {new Date().getFullYear()} Shreyans Jaiswal — Engineered with precision.
         </p>
