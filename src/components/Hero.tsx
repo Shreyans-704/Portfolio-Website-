@@ -144,7 +144,7 @@ export default function Hero() {
           {/* 2. Terminal-Style Identity — 24px below badge */}
           <div className="mt-6 font-mono text-[0.78rem] xs:text-[0.85rem] text-gray-400 tracking-tight flex items-center gap-1.5 select-none">
             <span className="text-blue-400 font-semibold">&gt;</span>
-            <span className="text-gray-300 font-medium">shreyans.build</span>
+            <span className="text-gray-300 font-medium">shreyans.me</span>
             <span className="text-gray-500">(</span>
             <span className="text-emerald-400/90">&quot;who are you?&quot;</span>
             <span className="text-gray-500">)</span>
@@ -152,7 +152,7 @@ export default function Hero() {
 
           {/* 3. Main Headline — 28px below terminal */}
           <h1 className="mt-7 text-[2.6rem] xs:text-[2.9rem] font-bold tracking-tight text-white leading-[1.05]">
-            Shreyans Jaiswal.
+            Shreyans Jaiswal
           </h1>
 
           {/* 4. Value Proposition — 14px below name */}
