@@ -69,9 +69,9 @@ export const metadata: Metadata = {
       "Shreyans Jaiswal is a Software Engineer and AI Developer at NIT Jalandhar, building AI applications, scalable backend systems, real-time platforms, and full-stack products.",
     images: [
       {
-        url: "/profile.png",
+        url: "/og-image.png",
         width: 1200,
-        height: 1200,
+        height: 630,
         alt: "Shreyans Jaiswal — Software Engineer & AI Developer",
         type: "image/png",
       },
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     title: "Shreyans Jaiswal | Software Engineer & AI Developer",
     description:
       "Shreyans Jaiswal is a Software Engineer and AI Developer at NIT Jalandhar, building AI applications, scalable backend systems, real-time platforms, and full-stack products.",
-    images: ["/profile.png"],
+    images: ["/og-image.png"],
   },
 };
 
