@@ -157,7 +157,7 @@ export default function Hero() {
 
           {/* 4. Value Proposition — 14px below name */}
           <h2 className="mt-3.5 text-[1.2rem] xs:text-[1.3rem] font-normal text-gray-200 leading-snug tracking-tight max-w-[340px] xs:max-w-[380px]">
-            I build AI-powered systems and production-grade web platforms.
+            I build backend systems, real-time applications, and AI-powered software.
           </h2>
 
           {/* 5. Compact Credentials — 48px below value prop */}
@@ -176,7 +176,7 @@ export default function Hero() {
 
           {/* 6. Description — 40px below credentials */}
           <p className="mt-10 text-[0.875rem] xs:text-[0.9rem] text-gray-400 leading-[1.7] max-w-[340px] xs:max-w-[370px] font-light">
-            I build AI-powered applications and production-grade software, from RAG systems and ML pipelines to real-time web platforms.
+           I build scalable software across backend systems, distributed applications, cloud automation, and AI — from real-time collaborative platforms and TCP-based systems to LLM-powered developer tools.
           </p>
 
           {/* 7. Dual Mobile CTA Action Bar — 44px below description */}
