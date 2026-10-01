@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import MarqueeStrip from "./MarqueeStrip";
+import GithubHeatmap from "./GithubHeatmap";
 
 export default function GithubStats() {
   const stats = [
@@ -88,6 +89,17 @@ export default function GithubStats() {
               </motion.div>
             ))}
           </div>
+
+          {/* ── GitHub Contribution Heatmap ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mt-8"
+          >
+            <GithubHeatmap />
+          </motion.div>
         </div>
       </div>
     </section>
