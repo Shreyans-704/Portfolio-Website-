@@ -43,7 +43,7 @@ export default function Achievements() {
       issuer: "GitLab",
       date: "Completed",
       desc: "Hands-on CI/CD pipeline automation and DevOps workflows.",
-      credentialId: "y29W6B7LT5CK...",
+      credentialId: "y29W6B7LT5CKmbzOTasIRQ",
       link: "https://university.gitlab.com/c/y29W6B7LT5CKmbzOTasIRQ"
     },
     {
@@ -51,7 +51,7 @@ export default function Achievements() {
       issuer: "McKinsey & Company",
       date: "Completed",
       desc: "12 core modules on structured thinking and data-driven decisions.",
-      credentialId: "f19e6076...",
+      credentialId: "f19e6076-553d-41db-b335-25226b67b9be",
       link: "https://www.credly.com/badges/f19e6076-553d-41db-b335-25226b67b9be/linked_in_profile"
     },
     {
@@ -59,7 +59,7 @@ export default function Achievements() {
       issuer: "Google",
       date: "Completed",
       desc: "Completed 12+ labs including GenAI apps, Cloud Vision API, and Cloud Run.",
-      credentialId: "590d51e9...",
+      credentialId: "590d51e9-ac1d-43eb-8099-d97fbfb9e12f",
       link: "https://www.cloudskillsboost.google/public_profiles/590d51e9-ac1d-43eb-8099-d97fbfb9e12f"
     },
     {
@@ -68,7 +68,7 @@ export default function Achievements() {
       date: "Completed",
       desc: "Containerization, Docker workflows, and deployment practices.",
       credentialId: "",
-      link: "https://www.udemy.com/"
+      link: ""
     },
     {
       title: "Salesforce Trailblazer",
@@ -125,57 +125,88 @@ export default function Achievements() {
 
           {/* Minimal Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert, i) => (
-              <motion.a
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={cert.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group flex flex-col p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] transition-colors duration-300 h-full"
-              >
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <h3 className="text-xl font-bold tracking-tight text-white mb-2 leading-tight pr-4">
-                      {cert.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-sm text-gray-400 font-medium">
-                      <span className="text-blue-400">{cert.issuer}</span>
-                      {cert.date && (
-                        <>
-                          <span className="opacity-30">•</span>
-                          <span>{cert.date}</span>
-                        </>
-                      )}
+            {certifications.map((cert, i) => {
+              const cardInner = (
+                <>
+                  <div className="flex justify-between items-start mb-6">
+                    <div>
+                      <h3 className="text-xl font-bold tracking-tight text-white mb-2 leading-tight pr-4">
+                        {cert.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-sm text-gray-400 font-medium">
+                        <span className="text-blue-400">{cert.issuer}</span>
+                        {cert.date && (
+                          <>
+                            <span className="opacity-30">•</span>
+                            <span>{cert.date}</span>
+                          </>
+                        )}
+                      </div>
                     </div>
+                    {cert.link ? (
+                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:text-blue-400 transition-colors shrink-0" aria-hidden="true">
+                        <ExternalLink className="w-4 h-4" />
+                      </div>
+                    ) : null}
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:text-blue-400 transition-colors shrink-0">
-                    <ExternalLink className="w-4 h-4" />
+
+                  <p className="text-base text-gray-400 leading-relaxed mb-8 font-light flex-grow">
+                    {cert.desc}
+                  </p>
+
+                  <div className="mt-auto flex items-center justify-between pt-6 border-t border-white/5">
+                    {cert.credentialId ? (
+                      <div className="flex flex-col">
+                        <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Credential ID</span>
+                        <span className="text-xs text-gray-300 font-mono mt-1 break-all">{cert.credentialId}</span>
+                      </div>
+                    ) : (
+                      <span className="text-xs text-gray-500">No public verification ID</span>
+                    )}
+                    {cert.link ? (
+                      <span className="text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        View
+                      </span>
+                    ) : null}
                   </div>
-                </div>
+                </>
+              );
 
-                <p className="text-base text-gray-400 leading-relaxed mb-8 font-light flex-grow">
-                  {cert.desc}
-                </p>
+              const cardClassName =
+                "group flex flex-col p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] transition-colors duration-300 h-full";
 
-                <div className="mt-auto flex items-center justify-between pt-6 border-t border-white/5">
-                  {cert.credentialId ? (
-                    <div className="flex flex-col">
-                      <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Credential ID</span>
-                      <span className="text-xs text-gray-300 font-mono mt-1">{cert.credentialId}</span>
-                    </div>
-                  ) : (
-                    <span />
-                  )}
-                  <span className="text-sm font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    View
-                  </span>
-                </div>
-              </motion.a>
-            ))}
+              if (!cert.link) {
+                return (
+                  <motion.div
+                    key={cert.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    className={cardClassName}
+                  >
+                    {cardInner}
+                  </motion.div>
+                );
+              }
+
+              return (
+                <motion.a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={cert.title}
+                  aria-label={`${cert.title} — ${cert.issuer}, verify credential (opens in new tab)`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className={cardClassName}
+                >
+                  {cardInner}
+                </motion.a>
+              );
+            })}
           </div>
 
         </div>

@@ -1,8 +1,38 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import MarqueeStrip from "./MarqueeStrip";
 import GithubHeatmap from "./GithubHeatmap";
+
+function StatImage({ title, url }: { title: string; url: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div
+        role="img"
+        aria-label={`${title} currently unavailable`}
+        className="w-full min-h-[150px] rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center px-6 py-10 text-center"
+      >
+        <p className="text-sm text-gray-500">
+          {title} currently unavailable — view activity directly on GitHub.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={url}
+      alt={title}
+      className="w-full h-auto rounded-lg select-none pointer-events-none"
+      loading="lazy"
+      referrerPolicy="no-referrer"
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export default function GithubStats() {
   const stats = [
@@ -69,17 +99,7 @@ export default function GithubStats() {
                 </div>
 
                 <div className="flex items-center justify-center min-h-[150px]">
-                  {/* Standard img tag as requested */}
-                  <img
-                    src={stat.url}
-                    alt={stat.title}
-                    className="w-full h-auto rounded-lg select-none pointer-events-none"
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/600x300?text=GitHub+Stats+Unavailable";
-                    }}
-                  />
+                  <StatImage title={stat.title} url={stat.url} />
                 </div>
 
                 <div className="mt-6 flex items-center justify-between">

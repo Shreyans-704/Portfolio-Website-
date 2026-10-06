@@ -9,7 +9,7 @@ export default function Experience() {
       role: "Salesforce Developer Intern",
       company: "Conscendo Technologies",
       companyLink:
-        "https://www.linkedin.com/company/conscendo/posts/?feedView=all",
+        "https://www.linkedin.com/company/conscendo",
       duration: "June – August 2026",
       location: "Hyderabad, India",
       highlight: "25+ Salesforce Flows",
@@ -26,7 +26,7 @@ export default function Experience() {
       role: "Software Developer Intern",
       company: "Engineers India Limited (EIL)",
       companyLink:
-        "https://www.linkedin.com/company/engineers-india-limited/posts/?feedView=all",
+        "https://www.linkedin.com/company/engineers-india-limited",
       duration: "June – July 2025",
       location: "New Delhi, India",
       highlight: "500+ Monthly Users",

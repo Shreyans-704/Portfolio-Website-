@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -133,7 +133,7 @@ const projectsData = [
       { value: "99%", label: "Accuracy", icon: "🎯" }
     ],
     githubUrl: "https://github.com/Shreyans-704/DocuMind---RAG-based-Document-Q-A-Engine",
-    liveUrl: "https://docu-mind-rag-based-document-q-a-engine-371nybwer.vercel.app/upload",
+    liveUrl: "https://docu-mind-rag-based-document-q-a-en.vercel.app/upload",
     image: "/projects/documind.png?v=1"
   },
   {
@@ -163,7 +163,7 @@ const projectsData = [
       { value: "2", label: "Deployments", icon: "🚀" }
     ],
     githubUrl: "https://github.com/Shreyans-704/AI-Security-Scanner",
-    liveUrl: "https://ai-security-scanner-blond.vercel.app/",
+    liveUrl: "https://ai-security-scanner-taupe.vercel.app/",
     image: "/projects/ai-security-scanner.png"
   },
   {
@@ -342,8 +342,8 @@ const projectsData = [
       { value: "Fast", label: "k-mer Extraction", icon: "🧬" },
       { value: "High", label: "Prediction rate", icon: "📊" }
     ],
-    githubUrl: "https://github.com/Shreyans-704/DNA-Pathogen-Pattern-Detection",
-    liveUrl: "https://github.com/Shreyans-704/DNA-Pathogen-Pattern-Detection",
+    githubUrl: "https://github.com/Shreyans-704/DNA-pathogen-prediction-ai",
+    liveUrl: "",
     image: "/projects/dna-pathogen.png"
   }
 ];
@@ -396,6 +396,15 @@ export default function Projects() {
               <motion.div
                 layoutId={`card-${p.id}`}
                 onClick={() => setSelectedId(p.id)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedId(p.id);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Open case study: ${p.title} — ${p.shortDesc}`}
                 key={p.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -495,8 +504,8 @@ export default function Projects() {
                   
                   {/* Close Button */}
                   <div className="sticky top-4 z-50 flex justify-end px-4 md:px-6 pt-4 -mb-14 pointer-events-none">
-                     <button onClick={() => setSelectedId(null)} className="w-10 h-10 rounded-full bg-black/80 hover:bg-white/20 flex items-center justify-center backdrop-blur-xl transition-colors border border-white/10 text-gray-400 hover:text-white pointer-events-auto">
-                       <X className="w-5 h-5" />
+                     <button aria-label="Close project details" onClick={() => setSelectedId(null)} className="w-10 h-10 rounded-full bg-black/80 hover:bg-white/20 flex items-center justify-center backdrop-blur-xl transition-colors border border-white/10 text-gray-400 hover:text-white pointer-events-auto">
+                       <X aria-hidden="true" className="w-5 h-5" />
                      </button>
                   </div>
 
@@ -611,3 +620,5 @@ export default function Projects() {
     </section>
   );
 }
+
+

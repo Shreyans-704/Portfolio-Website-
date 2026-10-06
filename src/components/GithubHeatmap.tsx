@@ -423,9 +423,6 @@ export default function GithubHeatmap() {
         }
         const json: ApiResponse = await res.json();
 
-        // 7. Temporary console.log statements
-        console.log("[GithubHeatmap] API response:", json);
-
         if (json.error) {
           throw new Error(json.error);
         }
@@ -443,14 +440,6 @@ export default function GithubHeatmap() {
               : 0,
         }));
 
-        const computedMax = mapped.reduce((m, d) => Math.max(m, d.count), 0);
-        const computedGrid = buildGrid(mapped);
-
-        console.log("[GithubHeatmap] days.length:", mapped.length);
-        console.log("[GithubHeatmap] totalContributions:", totalVal);
-        console.log("[GithubHeatmap] computed max contribution count:", computedMax);
-        console.log("[GithubHeatmap] generated grid length:", computedGrid.length);
-
         if (!cancelled) {
           setDays(mapped);
           setTotal(totalVal);
@@ -458,7 +447,6 @@ export default function GithubHeatmap() {
           setLoading(false);
         }
       } catch (err) {
-        console.error("[GithubHeatmap] Fetch error:", err);
         if (!cancelled) {
           setError("GitHub activity is currently unavailable.");
           setLoading(false);
@@ -611,26 +599,16 @@ export default function GithubHeatmap() {
                             key={`${ci}-${ri}`}
                             role={isEmpty ? "presentation" : "gridcell"}
                             aria-label={ariaLabel}
-                            tabIndex={isEmpty ? -1 : 0}
+                            aria-hidden={isEmpty ? true : undefined}
+                            tabIndex={-1}
                             className={`heatmap-cell${isEmpty ? " empty-day" : ""}`}
                             style={{ background: getLevelColor(isEmpty ? 0 : level) }}
                             onMouseEnter={(e) => !isEmpty && showTooltip(e, day)}
                             onMouseLeave={hideTooltip}
-                            onFocus={(e) => {
-                              if (!isEmpty) {
-                                showTooltip(e as unknown as React.MouseEvent, day);
-                              }
-                            }}
-                            onBlur={hideTooltip}
                             onTouchStart={(e) => {
                               if (!isEmpty) {
                                 e.preventDefault();
                                 showTooltip(e, day);
-                              }
-                            }}
-                            onKeyDown={(e) => {
-                              if ((e.key === "Enter" || e.key === " ") && !isEmpty) {
-                                showTooltip(e as unknown as React.MouseEvent, day);
                               }
                             }}
                           />
@@ -644,14 +622,14 @@ export default function GithubHeatmap() {
           </div>
 
           {/* ── Legend ── */}
-          <div className="heatmap-legend" aria-label="Contribution level legend">
+          <div className="heatmap-legend" role="img" aria-label="Contribution level legend from less to more">
             <span className="heatmap-legend-label">Less</span>
             {[0, 1, 2, 3, 4].map((lvl) => (
               <div
                 key={lvl}
                 className="legend-cell"
                 style={{ background: getLevelColor(lvl) }}
-                aria-label={`Level ${lvl}`}
+                aria-hidden="true"
               />
             ))}
             <span className="heatmap-legend-label">More</span>

@@ -35,7 +35,6 @@ export default function PortfolioAssistant() {
     setIsLoading(true);
 
     try {
-      console.log("Sending message to AI Assistant:", userMessage);
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -45,7 +44,6 @@ export default function PortfolioAssistant() {
       });
 
       const data = await response.json();
-      console.log("Response from AI Assistant:", data);
 
       if (response.ok && data.text) {
         setMessages((prev) => [...prev, { role: "assistant", content: data.text }]);
@@ -54,7 +52,6 @@ export default function PortfolioAssistant() {
         setMessages((prev) => [...prev, { role: "assistant", content: errorMsg }]);
       }
     } catch (error) {
-      console.error("Chat Submission Error:", error);
       setMessages((prev) => [...prev, { role: "assistant", content: "Something went wrong. Please check your connection." }]);
     } finally {
       setIsLoading(false);
@@ -88,9 +85,10 @@ export default function PortfolioAssistant() {
               </div>
               <button
                 onClick={() => setIsOpen(false)}
+                aria-label="Close assistant"
                 className="p-2 hover:bg-white/5 rounded-full text-gray-400 hover:text-white transition-colors"
               >
-                <X size={20} />
+                <X size={20} aria-hidden="true" />
               </button>
             </div>
 
@@ -141,19 +139,25 @@ export default function PortfolioAssistant() {
 
             {/* Input Area */}
             <form onSubmit={handleSubmit} className="p-4 bg-white/5 border-t border-white/5 flex gap-2">
+              <label htmlFor="portfolio-assistant-input" className="sr-only">
+                Ask about projects, skills, or experience
+              </label>
               <input
+                id="portfolio-assistant-input"
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask me anything..."
+                aria-label="Ask about projects, skills, or experience"
                 className="flex-1 bg-white/[0.03] border border-white/10 rounded-xl px-4 py-2 text-white text-sm focus:outline-none focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-500"
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
+                aria-label="Send message"
                 className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:hover:bg-blue-600 text-white p-2.5 rounded-xl transition-all shadow-lg shadow-blue-500/20"
               >
-                <Send size={18} />
+                <Send size={18} aria-hidden="true" />
               </button>
             </form>
           </motion.div>
@@ -165,6 +169,8 @@ export default function PortfolioAssistant() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close portfolio assistant" : "Open portfolio assistant"}
+        aria-expanded={isOpen}
         className={cn(
           "w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 border backdrop-blur-md",
           isOpen
@@ -172,7 +178,7 @@ export default function PortfolioAssistant() {
             : "bg-blue-600 border-blue-500 text-white hover:bg-blue-500 animate-bounce"
         )}
       >
-        {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
+        {isOpen ? <X size={28} aria-hidden="true" /> : <MessageCircle size={28} aria-hidden="true" />}
         {!isOpen && (
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 border-2 border-[#0b0f14] rounded-full animate-pulse" />
         )}

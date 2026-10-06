@@ -6,10 +6,26 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const { scrollY } = useScroll();
-  const [mounted, setMounted] = useState(false);
+  const [particles, setParticles] = useState<
+    { x: number; y: number; opacity: number; scale: number; size: number; drift: number; duration: number }[]
+  >([]);
 
   useEffect(() => {
-    setMounted(true);
+    // Generate once on mount (client-only) to avoid SSR hydration mismatch
+    // and re-render instability from Math.random() / window in render.
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    setParticles(
+      Array.from({ length: 20 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        opacity: Math.random() * 0.5 + 0.1,
+        scale: Math.random() * 2,
+        size: Math.random() * 4 + 1,
+        drift: Math.random() * -200 - 100,
+        duration: Math.random() * 10 + 10,
+      }))
+    );
   }, []);
 
   // Parallax constraints for Name (used exclusively in Desktop Hero)
@@ -27,30 +43,30 @@ export default function Hero() {
         <div className="absolute w-[60vw] max-w-[600px] h-[60vw] max-h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-x-1/4 mix-blend-screen" />
 
         {/* Abstract Glowing Particles (Desktop only for 60fps mobile touch performance) */}
-        {mounted && (
-          <div className="hidden md:contents">
-            {Array.from({ length: 20 }).map((_, i) => (
+        {particles.length > 0 && (
+          <div className="hidden md:contents" aria-hidden="true">
+            {particles.map((p, i) => (
               <motion.div
                 key={i}
                 className="absolute rounded-full bg-white"
                 initial={{
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
-                  opacity: Math.random() * 0.5 + 0.1,
-                  scale: Math.random() * 2,
+                  x: p.x,
+                  y: p.y,
+                  opacity: p.opacity,
+                  scale: p.scale,
                 }}
                 animate={{
-                  y: [null, Math.random() * -200 - 100],
+                  y: [null, p.drift],
                   opacity: [null, 0],
                 }}
                 transition={{
-                  duration: Math.random() * 10 + 10,
+                  duration: p.duration,
                   repeat: Infinity,
                   ease: "linear",
                 }}
                 style={{
-                  width: Math.random() * 4 + 1 + "px",
-                  height: Math.random() * 4 + 1 + "px",
+                  width: p.size + "px",
+                  height: p.size + "px",
                   boxShadow: "0 0 10px rgba(255,255,255,0.8)"
                 }}
               />

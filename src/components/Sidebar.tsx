@@ -164,15 +164,16 @@ export default function Sidebar() {
         transition={{ type: "spring", stiffness: 300, damping: 32 }}
         className="fixed top-0 left-0 h-screen h-[100dvh] w-72 md:w-64 bg-[#070708]/95 backdrop-blur-3xl border-r border-white/5 z-50 flex flex-col justify-between gap-6 pt-12 pb-[calc(2.5rem+env(safe-area-inset-bottom,0px))] overflow-y-auto overflow-x-hidden"
         aria-label="Site navigation"
+        aria-hidden={!isOpen}
       >
         {/* Brand / Logo */}
-        <div className="px-10 cursor-pointer shrink-0" onClick={() => handleNavClick("home")}>
+        <button type="button" onClick={() => handleNavClick("home")} aria-label="Go to home section" className="px-10 cursor-pointer shrink-0 text-left">
           <div className="relative w-12 h-12 rounded-2xl overflow-hidden mb-6 shadow-[0_0_30px_rgba(255,255,255,0.15)]">
             <Image src="/logo.png" alt="Shreyans Logo" fill className="object-contain" />
           </div>
           <h2 className="text-white font-semibold text-xl tracking-tight">Shreyans.</h2>
           <p className="text-blue-400 font-medium text-[0.65rem] tracking-[0.2em] uppercase mt-2">Creative Engineer</p>
-        </div>
+        </button>
 
         {/* Nav Links */}
         <nav className="flex flex-col gap-1 px-6 shrink-0">
@@ -201,16 +202,16 @@ export default function Sidebar() {
 
         {/* Footer Socials */}
         <div className="px-10 flex gap-6 text-gray-500 shrink-0">
-          <a href="https://github.com/Shreyans-704" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+          <a href="https://github.com/Shreyans-704" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)" className="hover:text-white transition-colors">
             <GithubIcon className="w-5 h-5" />
           </a>
-          <a href="https://linkedin.com/in/Shreyans-Jaiswal" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+          <a href="https://linkedin.com/in/Shreyans-Jaiswal" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)" className="hover:text-white transition-colors">
             <LinkedinIcon className="w-5 h-5" />
           </a>
-          <a href="https://x.com/Shreyans704" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+          <a href="https://x.com/Shreyans704" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter) profile (opens in new tab)" className="hover:text-white transition-colors">
             <TwitterIcon className="w-5 h-5" />
           </a>
-          <a href="https://leetcode.com/u/shreyans_704/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+          <a href="https://leetcode.com/u/shreyans_704/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode profile (opens in new tab)" className="hover:text-white transition-colors">
             <LeetCodeIcon className="w-5 h-5" />
           </a>
         </div>

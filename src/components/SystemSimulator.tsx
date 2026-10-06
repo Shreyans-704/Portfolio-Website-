@@ -30,18 +30,24 @@ const INITIAL: Metrics = {
 function useAnimatedNumber(target: number, duration = 600) {
   const [display, setDisplay] = useState(target);
   const ref = useRef(target);
+  const rafRef = useRef<number>(0);
   useEffect(() => {
     const start = ref.current;
     const diff = target - start;
+    if (diff === 0) return;
     const startTime = performance.now();
     const tick = (now: number) => {
       const p = Math.min((now - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
       setDisplay(Math.round(start + diff * eased));
-      if (p < 1) requestAnimationFrame(tick);
-      else ref.current = target;
+      if (p < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        ref.current = target;
+      }
     };
-    requestAnimationFrame(tick);
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
   }, [target, duration]);
   return display;
 }
@@ -142,14 +148,31 @@ export default function SystemSimulator() {
     { time: "00:00:01", msg: "Health check passed. Latency: 42ms", type: "info" },
   ]);
   const tickRef = useRef<NodeJS.Timeout | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
 
   const now = () => new Date().toLocaleTimeString("en-GB");
 
   const addLog = (msg: string, type: LogEntry["type"]) =>
     setLogs((prev) => [...prev.slice(-30), { time: now(), msg, type }]);
 
-  // Passive micro-fluctuation
+  // Track visibility — pause background work when off-screen
   useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  // Passive micro-fluctuation (paused when off-screen or tab hidden)
+  useEffect(() => {
+    if (!isVisible) return;
+    if (typeof document !== "undefined" && document.hidden) return;
     tickRef.current = setInterval(() => {
       setMetrics((m) => {
         if (m.status === "Critical") return m;
@@ -163,7 +186,7 @@ export default function SystemSimulator() {
       });
     }, 1800);
     return () => { if (tickRef.current) clearInterval(tickRef.current); };
-  }, []);
+  }, [isVisible]);
 
   const increaseLoad = () => {
     setMetrics((m) => ({
@@ -234,7 +257,7 @@ export default function SystemSimulator() {
   };
 
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 relative border-t border-white/5 bg-[#080b10]">
+    <section ref={sectionRef} className="w-full py-16 md:py-24 lg:py-32 relative border-t border-white/5 bg-[#080b10]">
       {/* Ambient glow based on status */}
       <motion.div
         className="absolute inset-0 pointer-events-none"

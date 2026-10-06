@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import TitleTyper from "@/components/TitleTyper";
 import PortfolioAssistant from "@/components/PortfolioAssistant";
 import "./globals.css";
 
@@ -97,7 +96,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className={inter.className}>
-        <TitleTyper />
         {children}
         <PortfolioAssistant />
       </body>

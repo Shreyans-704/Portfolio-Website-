@@ -3,6 +3,12 @@
 import { motion } from "framer-motion";
 import { Mail, Link, GitBranch, Download, Code2 } from "lucide-react";
 
+const XIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644Z" />
+  </svg>
+);
+
 export default function Contact() {
   return (
     <section className="w-full pt-24 pb-36 md:py-40 lg:py-48 relative flex flex-col items-center justify-center text-center border-t border-white/5 overflow-hidden">
@@ -52,6 +58,17 @@ export default function Contact() {
           </a>
 
           <a
+            href="https://x.com/Shreyans704"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X (Twitter) profile (opens in new tab)"
+            className="flex items-center gap-3 px-8 py-4 min-h-[52px] rounded-full bg-transparent border border-white/20 hover:bg-white/5 hover:border-white/40 hover:scale-[1.03] transition-all duration-300 font-medium w-full sm:w-auto justify-center text-white"
+          >
+            <XIcon className="w-4 h-4 text-gray-400" />
+            X
+          </a>
+
+          <a
             href="https://leetcode.com/u/shreyans_704/"
             target="_blank"
             rel="noopener noreferrer"
@@ -75,7 +92,7 @@ export default function Contact() {
       </motion.div>
 
       {/* Infinite Scrolling Marquee - Top */}
-      <div className="absolute top-10 left-0 w-full overflow-hidden flex whitespace-nowrap opacity-[0.25] pointer-events-none z-10 mix-blend-screen">
+      <div aria-hidden="true" className="absolute top-10 left-0 w-full overflow-hidden flex whitespace-nowrap opacity-[0.25] pointer-events-none z-10 mix-blend-screen">
         <motion.div
           className="flex gap-16 text-5xl md:text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500"
           animate={{ x: [-1000, 0] }}
@@ -89,7 +106,7 @@ export default function Contact() {
       </div>
 
       {/* Infinite Scrolling Marquee - Bottom */}
-      <div className="absolute bottom-8 md:bottom-10 left-0 w-full overflow-hidden flex whitespace-nowrap opacity-[0.25] pointer-events-none z-10 mix-blend-screen">
+      <div aria-hidden="true" className="absolute bottom-8 md:bottom-10 left-0 w-full overflow-hidden flex whitespace-nowrap opacity-[0.25] pointer-events-none z-10 mix-blend-screen">
         <motion.div
           className="flex gap-16 text-5xl md:text-8xl font-black tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500"
           animate={{ x: [0, -1000] }}
