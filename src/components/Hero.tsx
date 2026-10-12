@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ChevronDown } from "lucide-react";
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -136,77 +136,64 @@ export default function Hero() {
 
       {/* ============================================================
           MOBILE HERO CONTAINER (< md / 320px – 767px)
-          Left-aligned, top-anchored, full-viewport editorial layout.
-          Uses deliberate vertical rhythm instead of justify-center.
+          Left-aligned, top-anchored editorial layout.
+          Compact vertical rhythm tuned for phones; desktop
+          container above is untouched (>= md).
          ============================================================ */}
-      <div className="relative z-20 flex md:hidden flex-col items-start text-left w-full px-5 xs:px-6 pt-[100px] pb-16">
+      <div className="mobile-hero relative z-20 flex md:hidden flex-col items-start text-left w-full max-w-full overflow-x-clip px-5 xs:px-6 pt-[88px] pb-32">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="w-full flex flex-col items-start"
+          className="relative z-[1] w-full max-w-full flex flex-col items-start"
         >
           {/* 1. Status / Role Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-sm">
-            <span className="relative flex h-2 w-2 shrink-0">
+          <div className="inline-flex max-w-full items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-sm">
+            <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            <span className="text-[0.72rem] xs:text-[0.78rem] font-medium text-gray-300 tracking-wide">
+            <span className="truncate text-[0.72rem] xs:text-[0.78rem] font-medium text-gray-300 tracking-wide">
               Software Engineer &amp; AI Developer
             </span>
           </div>
 
-          {/* 2. Terminal-Style Identity — 24px below badge */}
-          <div className="mt-6 font-mono text-[0.78rem] xs:text-[0.85rem] text-gray-400 tracking-tight flex items-center gap-1.5 select-none">
-            <span className="text-blue-400 font-semibold">&gt;</span>
-            <span className="text-gray-300 font-medium">shreyans.me</span>
-            <span className="text-gray-500">(</span>
-            <span className="text-emerald-400/90">&quot;who are you?&quot;</span>
-            <span className="text-gray-500">)</span>
-          </div>
-
-          {/* 3. Main Headline — 28px below terminal */}
-          <h1 className="mt-7 text-[2.6rem] xs:text-[2.9rem] font-bold tracking-tight text-white leading-[1.05]">
+          {/* 2. Main Headline — metallic gradient echoes desktop identity */}
+          <h1 className="mobile-hero-name mt-6 max-w-full font-bold tracking-[-0.03em] leading-[1.02] text-balance text-[clamp(2.05rem,10.5vw,2.9rem)] text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-100 to-gray-400 drop-shadow-[0_2px_16px_rgba(255,255,255,0.07)]">
             Shreyans Jaiswal
           </h1>
 
-          {/* 4. Value Proposition — 14px below name */}
-          <h2 className="mt-3.5 text-[1.2rem] xs:text-[1.3rem] font-normal text-gray-200 leading-snug tracking-tight max-w-[340px] xs:max-w-[380px]">
-            I build backend systems, real-time applications, and AI-powered software.
-          </h2>
-
-          {/* 5. Compact Credentials — 48px below value prop */}
-          <div className="mt-12 flex flex-col gap-1.5 font-medium">
-            <div className="flex items-center gap-2 flex-wrap text-[0.82rem] xs:text-[0.875rem]">
-              <span className="text-gray-300">B.Tech IT @ NIT Jalandhar</span>
-              <span className="text-gray-600">·</span>
-              <span className="text-blue-400/80 font-mono">2027</span>
-            </div>
-            <div className="flex items-center gap-2 flex-wrap text-[0.82rem] xs:text-[0.875rem] text-gray-400">
+          {/* 3. Compact Credentials panel */}
+          <div className="mt-6 w-full max-w-full rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.05] to-white/[0.02] px-4 pt-3 pb-3.5 flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.35)]">
+            <p className="pb-2 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[0.8rem] xs:text-[0.85rem] leading-relaxed font-medium">
+              <span className="text-gray-100">B.Tech IT @ NIT Jalandhar</span>
+              <span className="text-gray-600" aria-hidden="true">·</span>
+              <span className="text-blue-400/90 font-mono text-[0.78em]">2027</span>
+            </p>
+            <p className="border-t border-white/[0.06] pt-2 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[0.8rem] xs:text-[0.85rem] leading-relaxed text-gray-400">
               <span>Ex-Intern @ EIL</span>
-              <span className="text-gray-600">·</span>
+              <span className="text-gray-600" aria-hidden="true">·</span>
               <span>Ex-Salesforce Intern @ Conscendo</span>
-            </div>
+            </p>
           </div>
 
-          {/* 6. Description — 40px below credentials */}
-          <p className="mt-10 text-[0.875rem] xs:text-[0.9rem] text-gray-400 leading-[1.7] max-w-[340px] xs:max-w-[370px] font-light">
-           I build scalable software across backend systems, distributed applications, cloud automation, and AI — from real-time collaborative platforms and TCP-based systems to LLM-powered developer tools.
+          {/* 4. Description */}
+          <p className="mt-5 max-w-full text-[0.95rem] text-gray-400 leading-[1.7] font-light text-pretty">
+           I build scalable software across backend systems, distributed applications, cloud automation, and AI — from <span className="text-gray-100 font-normal">real-time collaborative platforms</span> and TCP-based systems to <span className="text-gray-100 font-normal">AI-assisted developer tools</span>.
           </p>
 
-          {/* 7. Dual Mobile CTA Action Bar — 44px below description */}
-          <div className="mt-11 flex items-center gap-3 w-full flex-wrap xs:flex-nowrap">
+          {/* 5. Stacked Mobile CTA Action Bar */}
+          <div className="mobile-hero-cta mt-7 flex flex-col w-full max-w-full gap-3">
             <a
               href="#projects"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-black font-semibold text-sm tracking-wide shadow-lg shadow-white/10 active:scale-95 transition-all w-full xs:w-auto cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 min-h-[54px] py-4 rounded-xl bg-white text-black font-semibold text-[0.95rem] tracking-wide shadow-[0_8px_32px_rgba(255,255,255,0.10)] active:scale-[0.98] transition-transform w-full cursor-pointer"
             >
               <span>See the work</span>
-              <ArrowDown className="w-4 h-4" />
+              <ArrowDown className="w-4 h-4 shrink-0" aria-hidden="true" />
             </a>
 
             <a
@@ -215,11 +202,19 @@ export default function Hero() {
                 e.preventDefault();
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/5 border border-white/15 text-white hover:bg-white/10 font-medium text-sm tracking-wide active:scale-95 transition-all backdrop-blur-sm w-full xs:w-auto cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 min-h-[54px] py-4 rounded-xl bg-white/[0.04] border border-white/10 text-white hover:bg-white/10 font-medium text-[0.95rem] tracking-wide active:scale-[0.98] transition-all backdrop-blur-sm w-full cursor-pointer"
             >
               <span>Get in touch</span>
-              <ArrowRight className="w-4 h-4 text-gray-400" />
+              <ArrowRight className="w-4 h-4 shrink-0 text-gray-400" aria-hidden="true" />
             </a>
+          </div>
+
+          {/* 6. Scroll cue — subtle affordance for the content below */}
+          <div className="mobile-scroll-cue mt-10 flex w-full flex-col items-center gap-1.5" aria-hidden="true">
+            <span className="text-[0.62rem] font-medium uppercase tracking-[0.22em] text-gray-600">
+              Scroll to explore
+            </span>
+            <ChevronDown className="h-4 w-4 text-gray-600 animate-bounce" />
           </div>
         </motion.div>
       </div>
