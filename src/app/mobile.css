@@ -175,3 +175,11 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Push the page flow below the floating bottom navigation so the
+   footer and last section are never hidden behind the pill bar. */
+@media (max-width: 767px) {
+  .page-bottom-padding {
+    padding-bottom: calc(9rem + env(safe-area-inset-bottom, 0px));
+  }
+}

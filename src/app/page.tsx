@@ -2,7 +2,9 @@ import Sidebar from "@/components/Sidebar";
 import Hero from "@/components/Hero";
 import SystemSimulator from "@/components/SystemSimulator";
 import About from "@/components/About";
+import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import BottomNav from "@/components/BottomNav";
 import Projects from "@/components/Projects";
 import GithubStats from "@/components/GithubStats";
 import Skills from "@/components/Skills";
@@ -51,10 +53,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Sidebar />
-      <div className="w-full relative flex flex-col">
+      <div className="w-full relative flex flex-col page-bottom-padding">
         <div id="home"><Hero /></div>
         <SystemSimulator />
         <div id="about"><About /></div>
+        <div id="education"><Education /></div>
         <div id="experience"><Experience /></div>
         <div id="projects"><Projects /></div>
         <div id="github"><GithubStats /></div>
@@ -62,6 +65,7 @@ export default function Home() {
         <div id="achievements"><Achievements /></div>
         <div id="why-me"><WhyMe /></div>
         <div id="contact"><Contact /></div>
+        <BottomNav />
       
       <footer className="w-full py-8 border-t border-white/5 flex items-center justify-center px-6 bg-[#070708] relative z-10">
         <p className="text-gray-600 text-xs font-medium tracking-widest uppercase text-center">

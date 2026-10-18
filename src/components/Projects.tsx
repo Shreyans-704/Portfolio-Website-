@@ -382,7 +382,29 @@ export default function Projects() {
       <div className="py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           
-          <div className="mb-12 md:mb-20">
+          {/* ============================================================
+              MOBILE — reference-style section header: pill button → heading → intro
+             ============================================================ */}
+          <div className="md:hidden space-y-6 mb-10">
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white text-black font-semibold text-sm tracking-wide shadow-[0_8px_32px_rgba(255,255,255,0.10)]"
+            >
+              My Projects
+              <ArrowRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+            </a>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter text-white text-center">
+              Check out my latest work
+            </h2>
+            <p className="text-sm text-gray-400 font-light leading-relaxed text-center max-w-[320px] mx-auto">
+              Production-grade systems ranging from real-time synchronization pipelines to complex RAG inference engines. Here are a few of my favorites.
+            </p>
+          </div>
+
+          {/* ============================================================
+              DESKTOP — existing section header (untouched >= md)
+             ============================================================ */}
+          <div className="hidden md:block mb-12 md:mb-20">
             <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter mb-3 md:mb-4 text-white">
               Projects
             </h3>

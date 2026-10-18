@@ -19,7 +19,23 @@ export default function About() {
       <MarqueeStrip words={["CURIOUS MIND", "CLEAN CODE", "PURPOSEFUL DESIGN", "SYSTEMS THINKER", "ALWAYS LEARNING", "HUMAN-CENTERED", "SCALABLE BY DEFAULT"]} />
       <div className="py-16 md:py-32 lg:py-40 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+
+        {/* ============================================================
+            MOBILE — compact About per reference design: heading + paragraph
+           ============================================================ */}
+        <div className="md:hidden space-y-5">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-white">
+            About
+          </h2>
+          <p className="text-base md:text-lg text-gray-400 font-light leading-[1.7]">
+            I'm an AI-native software developer who enjoys building useful products, automating workflows, and exploring backend systems, AI/ML, and developer tools. I like understanding how things work under the hood and contributing to open-source software.
+          </p>
+        </div>
+
+        {/* ============================================================
+            DESKTOP — existing two-column layout (untouched >= md)
+           ============================================================ */}
+        <div className="hidden md:flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           
           {/* Left Text Side */}
           <div className="lg:w-1/2 basis-1/2 space-y-8 relative">
