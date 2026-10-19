@@ -9,12 +9,13 @@ export default function Education() {
         <div className="max-w-xl rounded-2xl bg-white/[0.02] border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.35)]">
           {/* Compact horizontal education row: logo | institution + degree | dates */}
           <div className="flex flex-row items-center gap-3 md:gap-4 p-4 md:p-5">
-            {/* No NIT Jalandhar logo asset exists in the repository, so a text badge
-                with the institute initials stands in for the logo mark. */}
-            <div className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/[0.08] border border-white/[0.12] flex items-center justify-center">
-              <span className="text-xs md:text-sm font-bold text-white tracking-tighter">
-                NITJ
-              </span>
+            {/* NIT Jalandhar official logo */}
+            <div className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white overflow-hidden border border-white/[0.12] flex items-center justify-center">
+              <img
+                src="/images/nitj-logo.webp"
+                alt="NIT Jalandhar Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
 
             <div className="flex-1 min-w-0">
