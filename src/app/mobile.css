@@ -66,16 +66,28 @@
    designed rhythm; desktop/tablet use the hidden md: container.
    ============================================================ */
 @media (max-width: 767px) {
-  /* Prevent any horizontal scroll from the hero on narrow phones */
   .mobile-hero {
     overflow-x: clip;
     max-width: 100vw;
-    /* Respect notches on fixed/floating descendants + leave
-       room for the floating chat button below the CTAs */
-    padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
-    /* iOS Safari: small-viewport height so the hero never clips
-       content when the URL bar collapses/expands */
-    min-height: 100svh;
+    /* The parent section (.hero-section-svh) already provides min-height: 100svh.
+       The inner .mobile-hero-inner grows to fill remaining space, which allows
+       mt-auto on the scroll cue to produce a proportional — not forced — push. */
+  }
+
+  /* Override the section's min-h-screen / hero-section-svh on mobile.
+     On phones, the hero should size to its content plus comfortable breathing
+     room — not be pinned to the full viewport height (which creates blank space
+     on 844px+ tall devices). */
+  .hero-section-svh {
+    min-height: auto;
+  }
+
+  /* Inner content column: fills all available vertical space so mt-auto
+     on the scroll cue can push it toward the bottom proportionally */
+  .mobile-hero-inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   /* Distinctive detail: faint engineering grid, masked so it fades
@@ -93,8 +105,9 @@
       linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
     background-size: 34px 34px;
     background-position: top center;
-    -webkit-mask-image: radial-gradient(ellipse 95% 62% at 50% 0%, black 25%, transparent 78%);
-    mask-image: radial-gradient(ellipse 95% 62% at 50% 0%, black 25%, transparent 78%);
+    /* extend mask slightly lower now that padding-top is reduced */
+    -webkit-mask-image: radial-gradient(ellipse 95% 55% at 50% 0%, black 20%, transparent 72%);
+    mask-image: radial-gradient(ellipse 95% 55% at 50% 0%, black 20%, transparent 72%);
   }
 
   /* Fluid name: fits 320px without overflow, caps before tablet */
@@ -116,11 +129,17 @@
     touch-action: manipulation;
   }
 
-  /* Scroll cue: quiet by design, sits in the lower viewport area */
+  /* Scroll cue: uses a responsive margin-top to sit below the content
+     with natural proportional spacing. clamp() keeps it tight on short
+     phones (667px) and prevents it ballooning into a void on tall ones. */
   .mobile-scroll-cue {
     position: relative;
     z-index: 1;
     user-select: none;
+    /* Proportional gap: 2rem on short screens, scales up to 4rem max.
+       This replaces the mt-auto/justify-between approach which created
+       a disconnected void on 844px+ tall phones. */
+    margin-top: clamp(2rem, 6vh, 4rem);
   }
 
   /* Shrink the decorative background glows so they never create

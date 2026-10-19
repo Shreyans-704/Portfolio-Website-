@@ -141,12 +141,12 @@ export default function Hero() {
           Compact vertical rhythm tuned for phones; desktop
           container above is untouched (>= md).
          ============================================================ */}
-      <div className="mobile-hero relative z-20 flex md:hidden flex-col items-start text-left w-full max-w-full overflow-x-clip px-5 xs:px-6 pt-[88px] pb-32">
+      <div className="mobile-hero relative z-20 flex md:hidden flex-col items-start text-left w-full max-w-full overflow-x-clip px-5 xs:px-6 pt-[clamp(72px,10vh,96px)] pb-[clamp(1.5rem,4vh,3rem)]">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="relative z-[1] w-full max-w-full flex flex-col items-start gap-5"
+          className="mobile-hero-inner relative z-[1] w-full max-w-full flex flex-col items-start grow gap-[clamp(0.875rem,2.5vh,1.5rem)]"
         >
           {/* 1. Status / Role Badge */}
           <div className="inline-flex max-w-fit items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-sm">
@@ -160,13 +160,13 @@ export default function Hero() {
           </div>
 
           {/* 2. Main Headline + circular profile image (left text / right image) */}
-          <div className="w-full flex flex-col items-start gap-6">
+          <div className="w-full flex flex-col items-start gap-5">
             <div className="flex flex-row items-center gap-5">
               <div className="min-w-0 flex-1">
                 <h1 className="mobile-hero-name mt-0 font-bold tracking-[-0.02em] leading-[1.02] text-balance text-[clamp(1.75rem,8vw,2.6rem)] text-white">
                   Hi, I'm Shreyans <span className="text-gray-300">👋</span>
                 </h1>
-                <p className="mt-3 text-[0.9rem] xs:text-[1rem] text-gray-400 leading-[1.7] font-light text-pretty">
+                <p className="mt-2 text-[0.88rem] xs:text-[0.95rem] text-gray-400 leading-[1.65] font-light text-pretty">
                   Final-year IT student at NIT Jalandhar, graduating in 2027.
                 </p>
               </div>
@@ -187,14 +187,14 @@ export default function Hero() {
           </div>
 
           {/* 3. Stacked Mobile CTA Action Bar */}
-          <div className="mobile-hero-cta mt-2 flex flex-col w-full gap-3">
+          <div className="mobile-hero-cta mt-[clamp(1.5rem,4vh,2.5rem)] flex flex-col w-full gap-3">
             <a
               href="#projects"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center justify-center gap-2 px-6 min-h-[54px] py-4 rounded-xl bg-white text-black font-semibold text-[0.95rem] tracking-wide shadow-[0_8px_32px_rgba(255,255,255,0.10)] active:scale-[0.98] transition-transform w-full cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 min-h-[50px] py-3.5 rounded-xl bg-white text-black font-semibold text-[0.95rem] tracking-wide shadow-[0_8px_32px_rgba(255,255,255,0.10)] active:scale-[0.98] transition-transform w-full cursor-pointer"
             >
               <span>See the work</span>
               <ArrowDown className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -206,15 +206,15 @@ export default function Hero() {
                 e.preventDefault();
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center justify-center gap-2 px-6 min-h-[54px] py-4 rounded-xl bg-white/[0.04] border border-white/10 text-white hover:bg-white/10 font-medium text-[0.95rem] tracking-wide active:scale-[0.98] transition-all backdrop-blur-sm w-full cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 min-h-[50px] py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-white hover:bg-white/10 font-medium text-[0.95rem] tracking-wide active:scale-[0.98] transition-all backdrop-blur-sm w-full cursor-pointer"
             >
               <span>Get in touch</span>
               <ArrowRight className="w-4 h-4 shrink-0 text-gray-400" aria-hidden="true" />
             </a>
           </div>
 
-          {/* 4. Scroll cue — subtle affordance for the content below */}
-          <div className="mobile-scroll-cue mt-10 flex w-full flex-col items-center gap-1.5" aria-hidden="true">
+          {/* 4. Scroll cue — spacing handled by .mobile-scroll-cue CSS (clamp-based margin-top) */}
+          <div className="mobile-scroll-cue flex w-full flex-col items-center gap-1.5" aria-hidden="true">
             <span className="text-[0.62rem] font-medium uppercase tracking-[0.22em] text-gray-600">
               Scroll to explore
             </span>
